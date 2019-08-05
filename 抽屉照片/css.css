@@ -1,0 +1,168 @@
+*{
+    padding:0;
+    margin:0;
+    list-style:none;
+    color:#fff;
+}
+:root{
+    width: 100%;
+    height:100%;
+}
+html body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#000;
+
+}
+.content{
+    width:80%;
+    height:80%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wrapper .content .item{
+    width: 16%;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+    background-color:#333;
+    overflow: hidden;
+    transition:width 1.5s,height 1.5s 1.5s,opacity 1s;
+}
+.wrapper .content .item .outer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wrapper .content .item .outer .title{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+    transition:opacity 1s 1.5s;
+}
+.wrapper .content .item .outer .title h2{
+    color:#fff;
+    font-size: 20px;
+    transition: all 1s;
+
+}
+.wrapper .content .item .head{
+    position:absolute;
+    top:20px;
+    left:30px;
+    opacity: 0;
+    transition: opacity 4s;
+}
+.wrapper-active .content .active .head{
+    opacity: 1;
+}
+.wrapper .content .item .close{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition:opacity 6s;
+}
+.wrapper-active .content .active .close{
+    opacity: 1;
+}
+.wrapper .content .item .close::before,
+.wrapper .content .item .close::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color:#fff;
+}
+.wrapper .content .item .close::before{
+    transform:rotate(45deg)
+}
+.wrapper .content .item .close::after{
+    transform: rotate(-45deg)
+}
+@keyframes show{
+    0%{
+    transform: translateY(100%);
+    }
+    100%{
+    transform: translateY(0%);
+
+    }
+}
+
+.wrapper .content .item .bg{
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-position:center center;
+    border-radius:20px; 
+    transform: translateY(0%);
+}
+.wrapper .content .item:nth-of-type(1) .bg{
+    background-image: url(image/1.jpg);
+    animation: show 3s forwards;
+
+}
+.wrapper .content .item:nth-of-type(2) .bg{
+    background-image: url(image/2.jpg);
+    animation: show 3s forwards .5s;
+
+}
+.wrapper .content .item:nth-of-type(3) .bg{
+    background-image: url(image/7.jpeg);
+    animation: show 3s forwards 1s;
+
+}
+.wrapper .content .item:nth-of-type(4) .bg{
+    background-image: url(image/4.jpg);
+    animation: show 3s forwards 1.5s;
+
+
+}
+.wrapper .content .item:nth-of-type(5) .bg{
+    background-image: url(image/5.jpg);
+    animation: show 3s forwards 2s;
+
+}
+.wrapper .content .item:nth-of-type(6) .bg{
+    background-image: url(image/6.jpg);
+    animation: show 3s forwards 2.5s;
+
+}
+.wrapper .content .item:hover,
+.wrapper-active .content .item{
+    opacity: 1;
+}
+.wrapper .content .item:hover .title h2{
+    transform: scale(1.5);
+}
+.wrapper .content .item.active{
+    width: 100%;
+}
+.wrapper-active .content .item:not(.active){
+    width: 0;
+    height: 0%;
+}
+
+.wrapper-active .content .item{
+    transition:height 1.5s,width 1.5s 1.5s;
+}
+.wrapper-active .content .item .title{
+    opacity: 0;
+}
+
