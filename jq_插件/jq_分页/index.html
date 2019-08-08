@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+  *{
+      padding:0;
+      margin:0;
+      list-style:none;
+  }
+  .paging{
+      width: 400px;
+      height:400px;
+      margin:100px auto;
+      border:1px solid orange;
+  }
+  .paging>ul>li{
+      display: inline-block;
+      padding: 1px 5px;
+      cursor: pointer;
+  }
+  .cur-page{
+      background-color:red;
+      color:#fff;
+  }
+
+</style>
+<body>
+    
+    <div class="paging">
+        <ul>
+       
+        </ul>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="pagin.js"></script>
+    <script>
+       $('.paging > ul').paging({
+           curPage:1,
+           allPage:2,
+           callback:function (newPage) {
+              console.log(newPage);
+           }
+
+       })
+    
+    
+    </script>
+</body>
+</html>
