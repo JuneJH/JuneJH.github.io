@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "verification": "/components/verification/verification",
+        "login-entry": "/components/login-entry/login-entry"
+    }
+}

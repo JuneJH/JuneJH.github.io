@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "历年真题",
+     "usingComponents": {
+        "login-entry": "/components/login-entry/login-entry"
+    }
+}
+

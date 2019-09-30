@@ -1,0 +1,91 @@
+.course-container,
+.system-course-container,
+.topic-course-container{
+	width:100%;
+	background-color:#FFAA70;
+	overflow: hidden;
+}
+/* 设置背景开始 */
+.system-course-container{
+	background-color:#B38CFF;
+}
+.topic-course-container{
+	background-color:#FF7170;
+}
+/* 设置背景结束*/
+
+/* 设置字体颜色开始 */
+.items-ul>li>a>h4{
+	color:#FFAA70;
+	font-size: 26px;	
+	font-weight:500;
+	line-height:37px;
+	margin:20px 0 5px;
+}
+.items-ul>li>a>span{
+	font-size:24px;
+	font-weight:400;
+	color:rgba(67,61,61,1);
+	line-height:33px;
+}
+.system-course .items-ul>li>a>h4{
+	color:#B38CFF;
+}
+.topic-course-container .items-ul>li>a>h4{
+	color:#FF7170;
+}
+/* 设置字体颜色结束 */
+
+.course-group{
+	margin-top:60px;
+}
+.course-group .course-type-title h2{
+	color:#fff;
+	font-size: 48px;
+	font-weight: 600;
+	margin:50px 0 25px;
+}
+.course-group .course-type-title>span{
+	color:#433D3D;
+	font-size: 24px;
+	font-weight: 400;
+}
+.course-group .course-type-title{
+	width: 100%;
+	text-align: center;
+}
+
+.free-course-items{
+	width: 65%;
+	min-width: 1200px;
+	margin: 79px auto 76px;
+}
+.items-ul>li{
+	width:282px;
+	height:120px;
+	background:rgba(255,255,255,1);
+	border-radius:10px;
+	text-align: center;
+
+}
+.items-ul>li{
+	float: left;
+	margin-right: 24px;
+	margin-bottom: 24px;
+}
+.items-ul>li:nth-child(4n){
+	margin-right:0px;
+}
+
+.course-container .free-course-items .items-ul li:hover{
+	background-color:rgb(255, 226, 207);
+
+}
+.system-course-container .free-course-items .items-ul li:hover{
+	background-color:rgb(227, 215, 255);
+
+}
+.topic-course-container .free-course-items .items-ul li:hover{
+	background-color:rgb(255, 210, 210);
+
+}

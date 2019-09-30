@@ -1,0 +1,121 @@
+<view class='order-body'>
+	<view class='tab flex flexSa '>
+		<view class='{{currentData == 0 ? "tab_on" : ""}}' data-current="0" bindtap='changeTab'>
+			<view class="size">待付款</view>
+			<view class='tab_li_line'></view>
+		</view>
+		<view class='{{currentData == 1 ? "tab_on" : ""}}' data-current="1" bindtap='changeTab'>
+			<view class="size">已付款</view>
+			<view class='tab_li_line'></view>
+		</view>
+	</view>
+	<!-- 待付款 -->
+	<view class="content" hidden='{{currentData != 0}}'>
+		<view s-if="{{nopay>0}}">
+			<block s-for="ele,index in orderda.data">
+				<view s-if="{{ele.state ==2}}" class="repeat">
+					<navigator url="/pages/obligationDetail/obligationDetail?orderguid={{ele.orderguid}}"
+						hover-class="none">
+						<view class="order-content">
+							<view class="order-head">
+								<view class="orderid">订单号：{{ele.orderid}}</view>
+								<view class="statename">{{ele.statename}}}</view>
+							</view>
+							<view class="order-center">
+								<image class="order-img" src="{{ele.cover}}" />
+								<view class="goodsname">{{ele.coursename}}-{{ele.CommodityTitle}}</view>
+								<view>￥{{ele.price}}</view>
+							</view>
+						</view>
+					</navigator>
+					<view class="order-bottom">
+						<view class="order-bottom-right">
+							<view>
+								<text class="needpay">需支付：</text>
+								<text class="price">￥{{ele.realPrice}}</text>
+							</view>
+							<view>
+								<button data-index="{{index}}" size="mini" class="btn" bindtap="pay">立即支付</button>
+							</view>
+
+						</view>
+					</view>
+				</view>
+
+				<view s-if="{{ele.state ==0}}" class="repeat">
+					<navigator url="/pages/obligationDetail/obligationDetail?orderguid={{ele.orderguid}}"
+						hover-class="none">
+						<view class="order-content">
+							<view class="order-head">
+								<view class="orderid">订单号：{{ele.orderid}}</view>
+								<view class="statename">{{ele.statename}}}</view>
+							</view>
+							<view class="order-center">
+								<image class="order-img" src="{{ele.cover}}" />
+								<view class="goodsname">{{ele.coursename}}-{{ele.CommodityTitle}}</view>
+								<view>￥{{ele.price}}</view>
+							</view>
+						</view>
+					</navigator>
+					<view class="order-bottom">
+						<view class="order-bottom-right">
+							<view>
+								<text class="needpay">需支付：</text>
+								<text class="price">￥{{ele.realPrice}}</text>
+							</view>
+							<view>
+								<button data-index="{{index}}" size="mini" class="btn" bindtap="pay">立即支付</button>
+							</view>
+
+						</view>
+					</view>
+				</view>
+
+			</block>
+		</view>
+		<view s-else>
+			<view class="nocontent-icon"></view>
+			<view class="nocontent">暂无内容~</view>
+		</view>
+	</view>
+	<!-- 已付款 -->
+	<view class="content" hidden='{{currentData != 1}}'>
+		<view s-if="{{yespay>0}}">
+			<block s-for="ele in orderda.data">
+				<view s-if="{{ele.state==1}}" class="repeat">
+					<navigator
+						url="/pages/orderDetail/orderDetail?orderguid={{ele.orderguid}}&finishtime={{ele.finishtime}}&validTime={{ele.validTime}}"
+						hover-class="none">
+						<view class="order-content">
+							<view class="order-head">
+								<view class="orderid">订单号：{{ele.orderid}}</view>
+								<view class="statename">{{ele.statename}}</view>
+							</view>
+							<view class="order-center">
+								<image class="order-img" src="{{ele.cover}}" />
+								<view class="goodsname">{{ele.coursename}}-{{ele.CommodityTitle}}</view>
+								<view>￥{{ele.price}}</view>
+							</view>
+						</view>
+					</navigator>
+					<view class="order-bottom">
+						<view class="expirationtime">
+							<view s-if="{{ele.expirationtime =='已过期'}}">{{ele.validTime}}</view>
+							<view s-else>有效期至：{{ele.validTime}}</view>
+						</view>
+						<view class="order-bottom-right">
+							<view class="needpay">实付：
+								<text class="price">￥{{ele.realPrice}}</text>
+							</view>
+
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+		<view s-else>
+			<view class="nocontent-icon"></view>
+			<view class="nocontent">暂无内容~</view>
+		</view>
+	</view>
+</view>

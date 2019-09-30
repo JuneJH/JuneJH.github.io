@@ -1,0 +1,85 @@
+.main {
+    height: 100%;
+}
+.title {
+    width: 650rpx;
+    height: 244rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20rpx;
+    margin-left: 50rpx;
+    margin-top: 24rpx;
+    border: 3rpx solid #e2e2e2;
+    box-shadow: 0 0 10rpx 10rpx  #f7f4f4;
+}
+.dqks {
+    margin-top:20rpx; 
+    font-size: 28rpx;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+    line-height: 33rpx;
+    margin-left: 270rpx;
+   
+}
+.tbody {
+    display: flex;
+}
+.coursename {
+    padding-top: 14%;
+    width: 140rpx;
+    font-weight: 100;
+    color: rgba(51, 51, 51, 1);
+    margin-left: 80rpx;
+}
+.examname{
+    width:166rpx;
+    height:28rpx;
+    font-size:24rpx;
+    font-family:'PingFang SC';
+    font-weight:100;
+    color:rgba(51,51,51,1);
+    line-height:33rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.change {
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 100;
+    color: rgba(255, 138, 0, 1);
+    margin-left: 100rpx;
+    margin-top: 68rpx;   
+}
+.line{
+    width: 3rpx;
+    height: 40rpx;
+    background:rgba(236,236,236,1);
+    margin-left: 80rpx;
+    margin-top: 64rpx;
+}
+.btn {
+    text-align: center;
+    border: 1rpx solid #cccccc;
+    border-radius: 40rpx;
+    margin: 5% 10% 0 100rpx;
+    font-size: 28rpx;
+    width: 550rpx;
+    height: 76rpx;
+    color: #666666;
+    line-height: 80rpx;
+}
+.select {
+    text-align: center;
+    border: 1rpx solid #fbbd32;
+    border-radius: 40rpx;
+    margin: 5% 10% 0 100rpx;
+    font-size: 28rpx;
+    width: 550rpx;
+    height: 76rpx;
+    line-height: 80rpx;
+    color: #fbbd32;
+}
+button::after {
+    border: none;
+}

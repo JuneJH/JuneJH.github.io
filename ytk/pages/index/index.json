@@ -1,0 +1,10 @@
+{
+
+    "navigationBarTitleText": "亿题库网",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "login-entry": "/components/login-entry/login-entry",
+        "gesture":"/components/gesture/gesture",
+        "answer":"/components/answer/answer"
+    }
+}

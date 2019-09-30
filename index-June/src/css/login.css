@@ -1,0 +1,407 @@
+/* 初始化操作 */
+*{
+    margin:0px;
+    padding:0px
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+button{
+    border: none;
+    background-color:transparent;
+}
+button:focus{
+    outline: none;
+}
+/* login reg===>lr 
+直接登录模块*/
+ 
+.lr-mask{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, .5);
+    position: fixed;
+    top:0;
+    left:0;
+    /* display: none; */
+    z-index: 9999;
+}
+.lr-mask .login-option{
+    width:100%;
+    margin-bottom: 25px;
+}
+.lr-from{
+    overflow: hidden;
+}
+.lr-mask .login-option>button{
+    border:none;
+    margin-right: 48px;
+    color:#555555;
+    position: relative;
+    font-size:16px;
+    font-weight:600;
+    }
+.lr-mask .login-option>button::after{
+    content:'';
+    position: absolute;
+    left:50%;
+    width:0px;
+    height: 2px;
+    bottom: -7px;
+    background-color: #f85c5b;
+    transition: all .6s;
+}
+.lr-mask .login-option>button:hover::after,
+.lr-mask .login-option>button.select::after{
+    width:80%;
+    left:10%;
+}
+.lr-mask .login-option>button:hover,
+.lr-mask .login-option>button.select{
+    color: #f85c5b;
+}
+.lr-mask .login-option>button:last-child{
+    margin-right: 0;
+}
+/* 密码登录 */
+.password-form{
+    /* display: none; */
+}
+
+.lr-mask .lr-from{
+    position: fixed;
+    width: 420px;
+    height: 480px;
+    background-color:#fff;
+    border-radius: 10px;
+    left:0px;
+    bottom: 0px;
+    right:0px;
+    top:0px;
+    margin:auto;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top:34px;
+}
+.lr-mask .lr-from .close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width:20px;
+    height: 20px;
+    cursor: pointer;
+}
+.lr-mask .lr-from .close::before{
+    content:'';
+    position:absolute;
+    width:2px;
+    height:16px;
+    background-color:#999;
+    transform: rotateZ(45deg);
+    top:2px;
+    left:9px;
+}
+.lr-mask .lr-from .close::after{
+    content:'';
+    position:absolute;
+    width:2px;
+    height:16px;
+    background-color:#999;
+    transform: rotateZ(-45deg);
+    top:2px;
+    left:9px;
+}
+.lr-mask .lr-from>h3{
+    margin-bottom: 30px;
+    color:#222222;
+    font-size: 22px;
+    font-weight: 700;
+}
+.lr-mask .lr-from .form-item{
+    width: 300px;
+    height: 38px;
+    background-color: #f8f8f8;
+    margin:0 auto 25px;
+    border-radius: 20px;
+    line-height: 38px;
+    position: relative;
+    z-index: 100;
+}
+.shoujihao-icon,
+.mima-icon,
+.ismimashow,
+.yam-ico{
+    cursor: pointer;
+    display:inline-block;
+    width:16px;
+    height:20px;
+    vertical-align: -4px;
+    background:url('../img/login-icon@1X-.png')no-repeat;
+}
+.shoujihao-icon{
+    background-position: -21px 0px;
+}
+.mima-icon{
+    vertical-align: -6px;
+     width:20px;
+     height: 22px;
+    background-position: -36px 0px;
+
+}
+.ismimashow{
+    width:20px;
+    height: 16px;
+    background-position: -56px 0px;
+}
+.yam-ico{
+    background-position: -1px 0px;
+}
+.jiantou-icon{
+    cursor: pointer;
+    display:inline-block;
+    background:url('../img/login-icon@1X-.png')no-repeat;
+    background-position: -1px -23px;
+}
+
+.lr-mask .lr-from .form-item .msg{
+    height: 20px;
+    text-align: left;
+    font-size: 12px;
+    color:#f85c5b;
+    line-height: 20px;
+    padding-left: 15px;
+}
+.lr-mask .lr-from .form-item>span{
+    color:#999;
+    font-size: 14px;
+}
+.lr-mask .lr-from .form-item .drag-btn{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 9999;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.lr-mask .lr-from .form-item>i{
+    width: 38px;
+    height: 38px;
+    background-color:#e9e4e4;
+    position: absolute;
+    left:0px;
+    border-radius: 19px;
+    z-index: 10;
+    /* border:1px solid #999; */
+    box-sizing: border-box;
+    font-style: normal;
+    color:#999;
+    font-size: 14px;
+
+}
+.lr-mask .lr-from .form-item:nth-of-type(2)>span:nth-of-type(2){
+    margin-left: 40px;
+}
+
+.lr-mask .lr-from .form-item>input{
+    width: 80%;
+    height: 100%;
+    outline: none;
+    border:none;
+    background-color: #f8f8f8;
+}
+.lr-mask .lr-from .form-item>input::placeholder{
+    color:#C5C5C5;
+    font-size: 14px;
+    font-weight: 400;
+}
+.lr-mask .lr-from .form-item>input::-webkit-input-placeholder{
+    color:#C5C5C5;
+    font-size: 14px;
+    font-weight: 400;
+}
+.lr-mask .lr-from .form-item.remenber-item,
+.lr-mask .lr-from .form-item.other-login,
+.register .form-item.agree{
+    height: 20px;
+    line-height: 20px;
+    background-color:#fff;
+}
+.form-item .remenber {
+    position: relative;
+    font-size: 14px;
+}
+.form-item .remenber input[type="checkbox"]+span{
+    display: inline-block;
+    width:12px;
+    height:12px;
+    border:1px solid #999;
+    border-radius:50%;
+    vertical-align: -2px;
+}
+
+.form-item .remenber>a{
+    margin-left: 140px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.form-item .remenber input[type="checkbox"]:checked+span{
+    border-color:#f85c5b;
+    background: url("../img/select.png") no-repeat -3px -3px;
+}
+.lr-mask .lr-from .form-item.submit-btn>button{
+    background-color:#f85c5b;
+    cursor: pointer;
+    width:100%;
+    height: 100%;
+    border-radius:20px;
+
+}
+.lr-mask .lr-from .form-item.submit-btn>button{
+    color:#fff;
+}
+.other-login>a{
+    color:#f85c5b;
+    font-size: 14px;
+}
+.other-login>span{
+    color:#666;
+    margin-left: 70px;
+    font-size: 14px;
+
+}
+.other-login.retrieve-login>span{
+    margin-left: 190px;
+}
+.other-login>span>a{
+    color:#f85c5b;
+}
+/* 微信登录 */
+.wechat-login{
+    display: none;
+
+}
+.wechat-login .wechat-ewm{
+    height: 310px;
+}
+.wechat-login .wechat-ewm>div{
+    width: 260px;
+    height: 300px;
+    border:1px solid;
+    margin: 0 auto;
+}
+
+/* 弃用的微信登录提示 */
+/* .wechat-login .wechat-ewm .wechat-tip{
+    color:#999;
+    font-size: 14px;
+    margin-top:20px;
+} */
+/* 短信验证登录 */
+.message-form{
+    display: none;
+}
+.getyzm{
+    position: absolute;
+    top:0px;
+    right:10px;
+    height: 100%;
+    color:#000;
+}
+.getyzm:disabled{
+    color:#999;
+}
+.lr-from .message-login>.form-item.submit-btn{
+    margin-top: 65px;
+}
+
+/* 注册 */
+.register-form{
+    display: none;
+}
+.lr-from .register .form-item.agree{
+     margin-bottom: 15px;
+}
+.lr-from .register .form-item.agree>span{
+    color:#000;
+    font-size: 12px;
+    margin-left: -70px;
+}
+.lr-from .register .form-item.agree>span>a{
+    color:#f85c5b;
+}
+.register .other-login.register-login>span{
+    margin-right:-150px;
+    font-size: 12px;
+}
+.register .other-login.register-login>span>a{
+    font-size: 12px;
+}
+.retrieve .other-login.register-login>span{
+    margin-right:-150px;
+    font-size: 12px;
+}
+/* 找回密码 */
+.retrieve-form{
+    display: none;
+}
+.reset-pw,
+.succ-register{
+    display: none;
+}
+.reset-pw .reset-tip,
+.succ-register .succ-tip{
+    margin-top:65px;
+    line-height: 2;
+}
+.reset-pw .reset-tip>img,
+.succ-register .succ-tip>img{
+    width: 120px;
+    height:90px;
+}
+.reset-pw .reset-tip>h4,
+.succ-register .succ-tip>h4{
+    font-size: 20px;
+}
+.reset-pw .reset-tip>p,
+.succ-register .succ-tip>p{
+    font-size: 12px;
+    color:#999;
+}
+.reset-pw .reset-tip>button,
+.succ-register .succ-tip>button{
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#f85c5b;
+    color:#fff;
+    font-weight: 600;
+    margin-top:50px;
+}
+.succ-register .succ-tip>button:last-child{
+    display: block;
+    margin-top:0px;
+    background-color:transparent;
+    color:#000;
+    margin-left: 110px;
+}
+
+/* 配合js的css
+   禁用登录按钮的状态
+
+*/
+.lr-mask .lr-from .form-item.submit-btn .disable-btn:disabled{
+    background-color:#fc9696;
+}
+/* 密码可见 */
+.show-password{
+    position: absolute;
+    right:10px;
+    /* height:100%; */
+    top:11px;
+    color:#999;
+    display: none;
+}

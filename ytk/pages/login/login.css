@@ -1,0 +1,220 @@
+.warpper {
+    padding-top: 70rpx;
+    padding-left: 75rpx;
+    padding-right: 75rpx;
+    margin-bottom: 56rpx;
+}
+.warpper .title {
+    /* font-family: PingFangSC-Medium; */
+    font-size: 54rpx;
+    font-weight: 500;
+    margin-bottom: 56rpx;
+}
+.warpper .tel {
+    outline: none;
+    width: 603rpx;
+    border-bottom: 1px solid #ececec;
+    height: 103rpx;
+    font-size: 34rpx;
+    /* font-family: PingFangSC; */
+}
+.warpper .inputbox {
+    position: relative;
+}
+.warpper .clean {
+    position: absolute;
+    right: 0;
+    bottom: 0rpx;
+    width: 28rpx;
+    height: 28rpx;
+    padding: 30rpx 5rpx;
+}
+.warpper .eyeclose {
+    position: absolute;
+    right: 0rpx;
+    bottom: 0rpx;
+    width: 30rpx;
+    height: 21rpx;
+    padding: 35rpx 5rpx;
+}
+.warpper .eyeclose + .clean {
+    right: 54rpx;
+}
+.warpper .tips {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #222;
+}
+.warpper .mode {
+    color: #f8a82f;
+    font-size: 28rpx;
+}
+.warpper .btn {
+    width: 602rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: rgb(109, 110, 110);
+    border-radius: 44rpx;
+    margin: 0;
+    font-size: 34rpx;
+    color: #fff;
+    margin-bottom: 28rpx;
+    margin-top: 100rpx;
+}
+.warpper .ready {
+    background: linear-gradient(
+        -9deg,
+        rgba(254, 204, 52, 1),
+        rgba(248, 168, 47, 1)
+    );
+}
+.warpper .btn::after {
+    border: none;
+}
+.warpper .footer {
+    font-size: 24rpx;
+    position: absolute;
+    bottom: 40rpx;
+    left: 117rpx;
+}
+.warpper .title2 {
+    font-size: 40rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    margin-bottom: 56rpx;
+}
+.warpper .tips2 {
+    font-size: 24rpx;
+    color: #d12513;
+}
+.warpper .errors {
+    color: #d12513;
+}
+.user_registration_agreement {
+    color: #f8a82f;
+}
+
+/* //我的页面 */
+.warpper2 {
+    background: rgba(230, 230, 230, 1);
+}
+.warpper2 .mainwidth {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+    background: #f9f9f9;
+}
+.warpper2 .loginsuccess_headImg {
+    width: 118rpx;
+    height: 118rpx;
+    margin-right: 20rpx;
+    border-radius: 50%;
+    margin-top: 28rpx;
+}
+.warpper2 .sex {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    left: 110rpx;
+    top: 120rpx;
+}
+.warpper2 .header {
+    width: 750rpx;
+    height: 195rpx;
+    padding-left: 25rpx;
+    background: linear-gradient(
+        180deg,
+        rgba(254, 204, 52, 1),
+        rgba(241, 135, 29, 1)
+    );
+    border: none;
+    display: flex;
+    flex-direction: row;
+}
+.warpper2 .username {
+    margin-top: 71rpx;
+    float: left;
+    font-size: 40rpx;
+    color: rgba(255, 255, 255, 1);
+}
+.warpper2 .header {
+    margin-bottom: 30rpx;
+}
+
+.warpper2 .loginsuccess_tittle_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50rpx;
+    font-size: 25rpx;
+    margin-bottom: 50rpx;
+    margin-left: 75rpx;
+    margin-right: 75rpx;
+}
+.warpper2 .loginsuccess_tittle_img {
+    width: 70rpx;
+    height: 71rpx;
+}
+.warpper2 .loginsuccess_tittle_words {
+    margin-top: 20rpx;
+    margin-left: -10rpx;
+    color: rgba(34, 34, 34, 1);
+    font-size: 22rpx;
+}
+.warpper2 .loginsuccess_tittle_main {
+    display: flex;
+    flex-direction: row;
+}
+
+.warpper2 .notic_rightarrow {
+    width: 12rpx;
+    height: 22rpx;
+    float: right;
+    margin-right: 23rpx;
+}
+.warpper2 .menuBottomMain {
+    width: 750rpx;
+    background: #ffffff;
+    position: relative;
+    /* top: -190rpx; */
+}
+
+.warpper2 .menuBottom {
+    padding-top: 20rpx;
+    margin-left: 23rpx;
+    margin-right: 23rpx;
+    background: #ffffff;
+    padding-bottom: 20rpx;
+}
+.warpper2 .menuBottomTittle {
+    font-size: 30rpx;
+    margin-left: 23rpx;
+}
+/*分割线样式*/
+.warpper2 .divLine {
+    background: #f9f9f9;
+    width: 100%;
+    height: 2rpx;
+    margin-top: 30rpx;
+}
+.servicePhone {
+    padding-top: 50rpx;
+}
+.warpper2 .service {
+    margin-top: 20rpx;
+    margin-left: 23rpx;
+    margin-right: 23rpx;
+    /* padding-top: 50rpx; */
+}
+.warpper2 .serviceTime {
+    overflow: hidden;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    float: right;
+    color: rgb(161, 161, 161);
+}
+.warpper2 .collect {
+    margin-bottom: 70rpx;
+}

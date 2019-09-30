@@ -1,0 +1,18 @@
+.noticeTittle {
+    padding-top: 30rpx;
+    margin-left: 25rpx;
+    font-size: 36rpx;
+}
+.noticeTime {
+    padding-left: 30rpx;
+    padding-top: 20rpx;
+    padding-bottom: 30rpx;
+    color: rgb(174, 174, 174);
+    font-size: 26rpx;
+}
+.noticeContainner {
+    text-align: left;
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    padding-bottom: 40rpx;
+}

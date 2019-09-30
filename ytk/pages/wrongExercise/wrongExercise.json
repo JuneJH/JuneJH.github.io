@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "错题与收藏",
+     "usingComponents": {
+        "login-entry": "/components/login-entry/login-entry"
+    }
+}

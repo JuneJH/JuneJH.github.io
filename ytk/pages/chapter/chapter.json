@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "章节课",
+    "backgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#FECC34",
+
+
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "login-entry": "/components/login-entry/login-entry"
+    }
+}

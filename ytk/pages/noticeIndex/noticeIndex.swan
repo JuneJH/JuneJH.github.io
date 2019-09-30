@@ -1,0 +1,25 @@
+<view class="container mainwidth"></view>
+<!-- 通知列表显示 -->
+<block s-for="noticeList" s-for-index="idx" s-for-item="notice">
+<view class="content" data-index='{{notice.id}}' bindtap="goNoticeDetails">
+        <view class="notice">
+            <image src="/images/通知.png" class="notice_node"></image>
+                <image
+                src="{{notice.isRead==true||isRead==true?noticeImgSrc:' '}}" class="notice_none">
+                </image>
+            <view class="noticContent2">{{notice.title}}</view>
+        </view>
+        <view class="time"><text >{{notice.addTime}}</text></view>
+</view>
+</block>
+<!-- 无通知内容 -->
+<view class="no_notice" s-if="{{noticeList.length <= 0}}">
+    <view class="containner">
+    <view>
+        <image src="/images/无评价.png" class="img"></image>
+    </view>
+    <view>
+        <text class="words">暂无消息~</text>
+    </view>
+</view>    
+</view>

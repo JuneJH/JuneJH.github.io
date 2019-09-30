@@ -1,0 +1,64 @@
+.mainwidth {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+}
+.container {
+    width: 750rpx;
+}
+.content {
+    margin-top: 40rpx;
+    margin-right: 23rpx;
+    margin-left: 23rpx;
+}
+navigator {
+    margin-bottom: 30rpx;
+}
+.notice {
+    display: flex;
+    flex-direction: row;
+    margin-right: 23rpx;
+}
+
+.notice_node {
+    width: 66rpx;
+    height: 66rpx;
+}
+.notice_none {
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: -20rpx;
+}
+.noticContent2 {
+    font-size: 32rpx;
+    margin-right: 23rpx;
+}
+.time {
+    display: flex;
+    flex-direction: column;
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    color: rgba(153, 153, 153, 1);
+    margin-left: 60rpx;
+    padding-top: 20rpx;
+    margin-bottom: 40rpx;
+}
+/*无通知 */
+.no_notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+    text-align: center;
+}
+.img {
+    width: 181rpx;
+    height: 174rpx;
+    margin-bottom: 10%;
+}
+.words {
+    color: #999999;
+    font-size: 28rpx;
+}

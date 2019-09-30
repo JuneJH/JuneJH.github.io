@@ -1,0 +1,102 @@
+<view class="coontiner">
+	<view class="left">
+		<scroll-view scroll-y="true">
+			<view class='{{toView=="jr"?"select":"noselect"}}' bind:tap="clickScroll" data-name="jr">
+				{{industryList[0].title}}</view>
+			<view class='{{toView=="lck"?"select":"noselect"}}' bind:tap="clickScroll" data-name="lck">
+				{{industryList[1].title}}</view>
+			<view class='{{toView=="gc"?"select":"noselect"}}' bind:tap="clickScroll" data-name="gc">
+				{{industryList[2].title}}</view>
+		</scroll-view>
+
+	</view>
+	<view class="right">
+		<scroll-view scroll-y scroll-into-view="{{toView}}" class="scview">
+			
+            <view class="scview-top">
+				<view class="rtitle1" id='jr'>{{industryList[0].title}}</view>
+				<view class="contents" id="zqcy" data-id="{{industryList[0].examList[0].id}}"
+					data-name='{{industryList[0].examList[0].title}}' bind:tap="gotoindex" data-img="../../images/证券从业.png">
+                    
+					<view>{{industryList[0].examList[0].title}}</view>
+				</view>
+				<view class="content" id="jjcy" data-id="{{industryList[0].examList[1].id}}"
+					data-name='{{industryList[0].examList[1].title}}' bind:tap="gotoindex"  data-img="../../images/基金从业.png"">
+
+					<view>{{industryList[0].examList[1].title}}</view>
+				</view>
+				<view class="content" id="yh" data-id="{{industryList[0].examList[2].id}}"
+					data-name='{{industryList[0].examList[2].title}}' bind:tap="gotoindex"  data-img="../../images/银行.png"">
+
+					<view>{{industryList[0].examList[2].title}}</view>
+				</view>
+				<view class="content" id="qh" data-id="{{industryList[0].examList[3].id}}"
+					data-name='{{industryList[0].examList[3].title}}' bind:tap="gotoindex"  data-img="../../images/期货.png"">
+
+					<view>{{industryList[0].examList[3].title}}</view>
+				</view>
+				<view class="content" id="zqzx" data-id="{{industryList[0].examList[4].id}}"
+					data-name='{{industryList[0].examList[4].title}}' bind:tap="gotoindex"  data-img="../../images/证券专项.png"">
+
+					<view>{{industryList[0].examList[4].title}}</view>
+				</view>
+                <view class="content" id="zj" data-id="{{industryList[0].examList[5].id}}"
+					data-name='{{industryList[0].examList[5].title}}' bind:tap="gotoindex"  data-img="../../images/中级经济师.png"">
+
+					<view>{{industryList[0].examList[5].title}}</view>
+				</view>
+				<view class="contentls" id="cfa" data-id="{{industryList[0].examList[5].id}}"
+					data-name='{{industryList[0].examList[5].title}}' bind:tap="gotoindex"  data-img="../../images/CFA.png"">
+
+					<view>{{industryList[0].examList[6].title}}</view>
+				</view>
+			</view>
+            
+			<view class="scview-middle">
+                
+				<view class="rtitle"  id="lck" >{{industryList[1].title}}</view>
+				<view class="content" id="zk" data-id="{{industryList[1].examList[0].id}}"
+					data-name='{{industryList[1].examList[0].title}}' bind:tap="gotoindex"  data-img="../../images/注会.png"">
+
+					<view>{{industryList[1].examList[0].title}}</view>
+				</view>
+				<view class="contents" id="ck" data-id="{{industryList[1].examList[1].id}}"
+					data-name='{{industryList[1].examList[1].title}}' bind:tap="gotoindex"  data-img="../../images/初会.png">
+					<view>{{industryList[1].examList[1].title}}</view>
+				</view>
+				<view class="content" id="zhk" data-id="{{industryList[1].examList[2].id}}"
+					data-name='{{industryList[1].examList[2].title}}' bind:tap="gotoindex"  data-img="../../images/中级经济师.png">
+
+					<view>{{industryList[1].examList[2].title}}</view>
+				</view>
+				<view class="contents" id="zj" data-id="{{industryList[1].examList[3].id}}"
+					data-name='{{industryList[1].examList[3].title}}' bind:tap="gotoindex"  data-img="../../images/中级经济师.png">
+
+					<view>{{industryList[1].examList[3].title}}</view>
+				</view>
+			</view>
+			<view class="scview-bottom">
+				<view class="rtitle" id='gc'>{{industryList[2].title}}</view>
+				<view class="contents" id="xf" data-id="{{industryList[2].examList[0].id}}"
+					data-name='{{industryList[2].examList[0].title}}' bind:tap="gotoindex" data-img="../../images/消防.png">
+
+					<view>{{industryList[2].examList[0].title}}</view>
+				</view>
+				<view class="content" id="yj" data-id="{{industryList[2].examList[1].id}}"
+					data-name='{{industryList[2].examList[1].title}}' bind:tap="gotoindex" data-img="../../images/一建.png">
+
+
+					<view>{{industryList[2].examList[1].title}}</view>
+				</view>
+				<view class="content" id="ej" data-id="{{industryList[2].examList[2].id}}"
+					data-name='{{industryList[2].examList[2].title}}' bind:tap="gotoindex" data-img="../../images/二建.png" >
+
+
+					<view>{{industryList[2].examList[2].title}}</view>
+				</view>
+			</view>
+           
+		</scroll-view>
+
+	</view>
+</view>

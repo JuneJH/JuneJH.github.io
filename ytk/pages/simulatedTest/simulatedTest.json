@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "模拟测试",
+     "usingComponents": {
+        "login-entry": "/components/login-entry/login-entry"
+    }
+}

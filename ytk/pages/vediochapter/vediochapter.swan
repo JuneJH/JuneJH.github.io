@@ -1,0 +1,167 @@
+<view class='container'>
+	<view class="vedio">
+		<text>这是视频播放</text>
+
+	</view>
+	<!-->!>隔离层占位<!-->
+	<view class="geli"></view>
+	<view class="swiper-tab">
+		<view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">讲义</view>
+		<view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">目录</view>
+		<view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">评价</view>
+	</view>
+
+	<swiper class="swiper" current="{{currentTab}}" duration="300" bindchange="swiperTab">
+		<swiper-item>
+			<view>
+
+				<image class="jy" src="/images/讲义.png"></image>
+
+				<image class="jy" src="/images/讲义.png"></image>
+			</view>
+
+
+
+
+		</swiper-item>
+		<swiper-item>
+			<view >
+            <view class="geli"></view>
+			<view class="content">
+				<view class="display">
+                    <image  s-if="{{first}}"   class="imagess" src="/images/展开.png"></image>
+					<image  s-else class="imagess" src="/images/收缩.png"></image>
+					<view class="bigchapter"><text>第一篇 消防基础知识</text></view>
+				</view>
+			</view>
+
+			<view class="content-chapter">
+				<view class="display">
+                    <image  s-if="{{second}}" class="imagess-2" src="/images/展开.png"></image>
+					<image  s-else class="imagess-2" src="/images/收缩.png"></image>
+					<view class="mchapter"><text>第一章 燃烧</text></view>
+				</view>
+			</view>
+			<view class="smallgelis"></view>
+		
+			<view class="content-chapters">
+				<view class="display">
+					<view class="Y-axis"></view>
+					<image class="imagess-point" src="/images/小白点.png"></image>
+					<view style=" margin-left: 29rpx;" class="mchapter">课程前言</view>
+					<image style="top:27%;" class="vediostar" src="/images/playing.png"></image>
+				</view>
+			</view>
+			<view class="smallgelis"></view>
+
+			<view class="content-chapters">
+				<view class="display">
+					<view class="Y-axis"></view>
+					<image class="imagess-point" src="/images/小白点.png"></image>
+					<view class="schapter"><text>燃烧条件</text></view>
+					<image style="top:27%;" class="vediostar" src="/images/play.png"></image>
+				</view>
+			</view>
+			<view class="smallgelis"></view>
+
+			</view>
+</view>
+		</swiper-item>
+		<swiper-item>
+			<view class="star">
+				<view class="display">
+					<view class="evaluteall">全部评价</view>
+					<text>共3600个评价</text>
+				</view>
+				<view class="display">
+					<view class="totlestar">5.0</view>
+					<view class="start-xing">
+						<view class="xing5">
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+						</view>
+						<view class="xing5">
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+						</view>
+						<view class="xing5">
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+						</view>
+						<view class="xing5">
+							<image src="/images/暗星星.png"></image>
+							<image src="/images/暗星星.png"></image>
+						</view>
+						<view class="xing5">
+							<image src="/images/暗星星.png"></image>
+						</view>
+					</view>
+
+					<view class="proxing">
+						<progress class="progress" active='true' percent="{{xing5}}" activeColor="#848484"
+							backgroundColor="#ECECEC" stroke-width="3" />
+						<progress class="progress" active='true' percent="{{xing4}}" activeColor="#848484"
+							backgroundColor="#ECECEC" stroke-width="3" />
+						<progress class="progress" active='true' percent="{{xing3}}" activeColor="#848484"
+							backgroundColor="#ECECEC" stroke-width="3" />
+						<progress class="progress" active='true' percent="{{xing2}}" activeColor="#848484"
+							backgroundColor="#ECECEC" stroke-width="3" />
+						<progress class="progress" active='true' percent="{{xing1}}" activeColor="#848484"
+							backgroundColor="#ECECEC" stroke-width="3" />
+
+					</view>
+				</view>
+			</view>
+
+			<view class="evalute">
+				<view class="usericon">
+					<view class="usericon-back">
+						<image src="/images/default_icon.png"></image>
+
+					</view>
+				</view>
+
+				<view class="user">
+					<view class="userintro">
+						<view class="username">赵小贱</view>
+						<view class="user-date">2018.12.12</view>
+
+						<view class="start">
+							<view s-for="imgs">
+								<image src="{{item.id>starId?src2:src1}}"></image>
+							</view>
+						</view>
+					</view>
+
+					<view class="userp">
+						<view class="usercontent">
+							正式规定大学教员分教授、副教授、讲师、助教四级。中华人民共和国成立后沿用未变。1960年3月5日，国务院颁发的《关于高等学校教师职务名称及其确定与提升办法的暂行规定》。
+						</view>
+
+					</view>
+
+				</view>
+
+
+
+
+
+			</view>
+</view>
+</swiper-item>
+</swiper>
+
+
+
+
+
+
+
+
+</view>

@@ -1,0 +1,5 @@
+{
+     "usingComponents": {
+        "verification":"/components/verification/verification"
+    }
+}

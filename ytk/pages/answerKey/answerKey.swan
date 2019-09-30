@@ -1,0 +1,335 @@
+<import src="../../wxParse/wxParse.swan" />
+<view class="container">
+	<!--to do-->
+	<view class="header-nav">
+		<text class="topic-sum"><text>{{globalIndex + 1}}</text>/{{list.length}}</text>
+		<text class="topic-type">{{list[globalIndex].quetypename}}}</text>
+	</view>
+	<view class="topic-area">
+		<!-- bindchange="currentHandle"   circular="true" -->
+		<swiper class="topic-swiper" current="{{curr}}" bindchange="slideHandle">
+			<!-- 生成一共有好多页 -->
+			<block s-for="list" s-for-index="index" s-for-item="item">
+				<swiper-item>
+					<scroll-view class="topic-detail" scroll-y="true">
+						<!-- 判断是否为组合体 -->
+						<block s-if="list[index].struct == 1">
+							<!-- 题目 -->
+							<view class="topic-title">
+								<template is="wxParse" data="{{{...mainque[index].content}}}" /></view>
+							<!-- 如果是单选题 -->
+							<block s-if="{{mainque[index].enginemode == '1'}}" s-for="ele,p in mainque[index].option">
+								<view
+									class="item-option {{tureAnswerArry[index][0] === optionCase[p] ? 'selectTrue' : ''}} {{userAnswer[index][0] === optionCase[p] ? 'selectWrong' : ''}} {{list[index].isisright == '0' ? 'selectNot-do':''}}"
+									data-topicInfo="{{p}}" bindtap="optionhandle">
+									<text class="option-case">{{optionCase[p]}}</text>
+									<view class="option-content">
+										<template is="wxParse" data="{{{...ele}}}" /></view>
+								</view>
+							</block>
+							<!-- 多选题 -->
+							<block s-elif="{{mainque[index].enginemode == '2'}}" s-for="ele,p in mainque[index].option">
+								<view
+									class="item-option checkbox {{tureAnswerArry[index][p] === optionCase[p] ? 'selectTrue' : ''}} {{userAnswer[index][p] === optionCase[p] ? 'selectWrong' : ''}} {{list[index].isisright == '0' ? 'selectNot-do':''}}"
+									data-topicInfo="{{p}}" bindtap="optionhandle">
+									<text class="option-case">{{optionCase[p]}}</text>
+									<view class="option-content">
+										<template is="wxParse" data="{{{...ele}}}" /></view>
+								</view>
+							</block>
+							<!-- 判断题 -->
+							<block s-elif="{{mainque[index].enginemode == '3'}}" s-for="ele,p in mainque[index].option">
+								<view
+									class="item-option checkbox {{tureAnswerArry[index][0] === optionCase[p] ? 'selectTrue' : ''}} {{userAnswer[index][0] === optionCase[p] ? 'selectWrong' : ''}} {{list[index].isisright == '0' ? 'selectNot-do':''}}"
+									data-topicInfo="{{p}}" bindtap="optionhandle">
+									<text class="option-case">{{optionCase[p]}}</text>
+									<view class="option-content">
+										<template is="wxParse" data="{{{...ele}}}" /></view>
+								</view>
+							</block>
+                            <block s-else>
+                                <view class="topic-title zuheti">
+								<template is="wxParse" data="{{{...mainque[index].title}}}" /></view> 
+                                		<view class="text-area">
+									{{list[index].useranswer}}
+								</view>
+                            </block>
+							<!-- 答案解析 -->
+							<view class="answer-key-wrap">
+								<view class="answer-key">
+                                    		<view class="answer-ratio">
+                                    <block s-if="{{mainque[index].enginemode != '1' && mainque[index].enginemode != '2' && mainque[index].enginemode != '3'}}">
+                                            <text class="red-word">主观题不支持判分，可查看解析核对答案</text>
+                                            <view class="grade">试题难度:
+                                                <text class="{{mainque[index].Extent >=1 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[index].Extent >=2 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[index].Extent >= 3 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[index].Extent >= 4 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[index].Extent >= 5 ? 'light' : ''}}"></text>
+                                            </view>
+                                    </block>
+                                    <block s-else>
+                                         		<text
+											class="Isanswer {{list[index].isright == 1 ? 'do-true':'' }}">{{list[index].isright == 1 ? "回答正确":"回答错误" }}</text>
+										<view>
+											<text
+												class="true-answer">正确答案:<text>{{tureAnswerString[index]}}</text></text>
+											<text
+												class="myAnswer {{list[index].isright == 1 ? 'do-true':'' }}">我的答案:<text>{{userAnswerString[index]}}</text></text>
+										</view>
+										<view class="grade">试题难度:
+											<text class="{{mainque[index].Extent >=1 ? 'light' : ''}}"></text>
+											<text class="{{mainque[index].Extent >=2 ? 'light' : ''}}"></text>
+											<text class="{{mainque[index].Extent >= 3 ? 'light' : ''}}"></text>
+											<text class="{{mainque[index].Extent >= 4 ? 'light' : ''}}"></text>
+											<text class="{{mainque[index].Extent >= 5 ? 'light' : ''}}"></text>
+										</view>
+                                    </block>
+								</view>
+									<view class="analysis">
+										<view class="analysis-title">
+											<text class="{{showWord ? 'select':''}}"
+												bindtap='clickWordHandle'>文字解析</text>
+											<text class="{{showVideo ? 'select':''}}"
+												bindtap='clickVideoHandle'>视频解析</text>
+										</view>
+										<block s-if="showWord">
+											<view class="word-analysis">
+												<template is="wxParse" data="{{{...mainque[index].Explanation}}}" />
+											</view>
+										</block>
+										<block s-if="showVideo">
+											<view class="video-analysis">
+												<video src="{{mainque[index].videocode}}"></video>
+											</view>
+
+										</block>
+
+									</view>
+									<view class="exam-point">
+										<view class="exam-title">考点</view>
+										<view class="exam-content">
+											{{mainque[index].knowpoint}}
+										</view>
+									</view>
+									<view class="topic-source">
+										<view class="topic-source-title">来源</view>
+										<view class="topic-info">
+											亿题库
+										</view>
+									</view>
+
+								</view>
+							</view>
+							<!-- 答案解析结束 -->
+						</block>
+						<block s-else>
+							<!-- 题目 -->
+							<view class="topic-title">
+								<template is="wxParse" data="{{{...mainque[index].content}}}" /></view>
+						</block>
+					</scroll-view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-- 底部bar -->
+	<view class="my-tabBar">
+		<view class="answer-card" bindtap="answerCardBtnHandle">
+			<text></text>
+			<text>答题卡</text>
+		</view>
+		<view class="collection {{mainqueCollectstate == '1' ? 'coll-show' : ''}}" bindtap="collectionHandle">
+			<text></text>
+			<text>收藏</text>
+
+		</view>
+		<!-- <view class="error-update">
+			<text></text>
+			<text>纠错</text>
+		</view> -->
+		<!-- <view class="submit-btn" bindtap='submitBtnHandle'>提交</view> -->
+	</view>
+	<!--答题卡  -->
+	<view class="answer-mask {{answerMask?'show':''}}" bindtap='answerMaskHandle'>
+		<view class="answer-wrap {{answerWrap ? 'full':''}}" catchtap='stopHandle' bindtouchstart="touchStart"
+			bindtouchend="touchEnd">
+			<view class="answer-name">
+				<text>答题卡</text>
+				<view class="close-btn" bindtap='closeBtnHandle'></view>
+			</view>
+			<view class="answer-flag">
+				<view class="do-right">做对 <text>({{doRight}})</text> </view>
+				<view class="do-wrong">做错 <text>({{doWrong}})</text> </view>
+				<view class="no-do">未做 <text>({{noDo}})</text> </view>
+				<view class="not-score">不支持判分 <text>({{noScroe}})</text> </view>
+			</view>
+			<view class="answer-detail">
+				<block s-for="list">
+					<block s-if="item.isright == 0">
+						<view class="no-do" bindtap='answerCaseHandle' data-topicIndex='{{index}}'>{{index + 1}}</view>
+					</block>
+					<block s-elif="item.isright == 1">
+						<view class="right" bindtap='answerCaseHandle' data-topicIndex='{{index}}'>{{index + 1}}</view>
+					</block>
+					<block s-elif="item.isright == 2">
+						<view class="wrong" bindtap='answerCaseHandle' data-topicIndex='{{index}}'>{{index + 1}}</view>
+					</block>
+					<block s-elif="item.isright == 3">
+						<view class="not-score" bindtap='answerCaseHandle' data-topicIndex='{{index}}'>{{index + 1}}
+						</view>
+					</block>
+				</block>
+			</view>
+			<!-- <view class="answer-case-wrap">
+				<block s-for="list">
+					<view class="answer-case {{userAnswer[index] ?'done':''}}" bindtap='answerCaseHandle'
+						data-topicIndex='{{index}}'>{{index + 1}}</view>
+				</block> -->
+		</view>
+
+	</view>
+	<view class="answer-btn-wrap">
+		<!-- <vie
+			w class="answer-btn" catchtap='submitHandle'>提交并查看结果</view> -->
+	</view>
+	<!-- toast -->
+	<toast id='collection-toast'></toast>
+	<!-- 组合题渲染模块 -->
+	<view class="structWrap" style="top:{{top}}rpx;" s-if="mainque[globalIndex].subTopic">
+		<!-- <view>{{mainque[globalIndex].subTopic.title}}</view> -->
+		<view bindtouchmove='drag' bindtouchend="leave">
+			<view class="wireway"></view>
+			<view class="header-nav">
+				<text class="topic-sum"><text>{{subIndex + 1}}</text>/{{list[globalIndex].qids.length}}</text>
+				<text class="topic-type">{{mainque[globalIndex].subTopic[0].quetypename}}</text>
+			</view>
+		</view>
+		<view class="topic-area">
+			<swiper class="topic-swiper" current="{=subCurr=}" bindchange="slideSubHandle">
+				<block s-for="list[globalIndex].qids" s-for-index="index" s-for-item="item">
+					<swiper-item>
+						<scroll-view class="topic-detail" scroll-y="true">
+							<!-- 判断是否为组合体 -->
+							<!-- 题目 -->
+							<view class="topic-title">
+								<template is="wxParse" data="{{{...mainque[globalIndex].subTopic[index].title}}}" />
+							</view>
+							<!-- 如果是单选题 -->
+							<block s-if="{{mainque[globalIndex].subTopic[index].enginemode == '1'}}"
+								s-for="ele,p in mainque[globalIndex].subTopic[index].option">
+								<view
+									class="item-option {{trueAnswer === optionCase[p] ? 'selectTrue' : ''}} {{myAnswer === optionCase[p] ? 'selectWrong' : ''}} {{list[globalIndex].isisright == '0' ? 'selectNot-do':''}}"
+									data-topicInfo="{{p}}" bindtap="optionhandle">
+									<text class="option-case">{{optionCase[p]}}</text>
+									<view class="option-content">
+										<template is="wxParse" data="{{{...ele}}}" /></view>
+								</view>
+							</block>
+							<!-- 多选题 -->
+							<block s-elif="{{mainque[globalIndex].subTopic[index].enginemode == '2'}}"
+								s-for="ele,p in mainque[globalIndex].subTopic[index].option">
+								<view
+									class="item-option checkbox {{trueAnswerArry[p] === optionCase[p] ? 'selectTrue' : ''}} {{myAnswerArry[p] === optionCase[p] ? 'selectWrong' : ''}} {{list[globalIndex].isisright == '0' ? 'selectNot-do':''}}"
+									data-topicInfo="{{p}}" bindtap="optionhandle">
+									<text class="option-case">{{optionCase[p]}}</text>
+									<view class="option-content">
+										<template is="wxParse" data="{{{...ele}}}" /></view>
+								</view>
+							</block>
+							<!-- 判断题 -->
+							<block s-elif="{{mainque[globalIndex].subTopic[index].enginemode == '3'}}"
+								s-for="ele,p in mainque[globalIndex].subTopic[index].option">
+								<view
+									class="item-option checkbox {{trueAnswer === optionCase[p] ? 'selectTrue' : ''}} {{myAnswer === optionCase[p] ? 'selectWrong' : ''}} {{list[globalIndex].isisright == '0' ? 'selectNot-do':''}}"
+									data-topicInfo="{{p}}" bindtap="optionhandle">
+									<text class="option-case">{{optionCase[p]}}</text>
+									<view class="option-content">
+										<template is="wxParse" data="{{{...ele}}}" /></view>
+								</view>
+							</block>
+							<block s-else>
+								<view class="text-area">
+									{{userAnswer[globalIndex].subAnswer[index]}}
+								</view>
+							</block>
+							<!-- 答案解析开始 -->
+							<!-- 答案解析 -->
+                    
+							<view class="answer-key-wrap">
+								<view class="answer-key">
+								<view class="answer-ratio">
+                                    <block s-if="{{mainque[globalIndex].subTopic[index].enginemode != '1' && mainque[globalIndex].subTopic[index].enginemode != '2' && mainque[globalIndex].subTopic[index].enginemode != '3'}}">
+                                            <text class="red-word">主观题不支持判分，可查看解析核对答案</text>
+                                            <view class="grade">试题难度:
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >=1 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >=2 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >= 3 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >= 4 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >= 5 ? 'light' : ''}}"></text>
+                                            </view>
+                                    </block>
+                                    <block s-else>
+                                            <text class="Isanswer {{list[globalIndex].isright == 1 ? 'do-true':'' }}">{{list[globalIndex].isright == 1 ? "回答正确":"回答错误" }}</text>
+                                            <view>
+                                                <text class="true-answer">正确答案:<text>遇到了嘛这儿放正确答案</text></text>
+                                                <text class="myAnswer {{list[globalIndex].isright == 1 ? 'do-true':'' }}">我的答案:<text>这儿放正确答案</text></text>
+                                            </view>
+                                            <view class="grade">试题难度:
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >=1 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >=2 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >= 3 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >= 4 ? 'light' : ''}}"></text>
+                                                <text class="{{mainque[globalIndex].subTopic[index].Extent >= 5 ? 'light' : ''}}"></text>
+                                            </view>
+                                    </block>
+								</view>
+									<view class="analysis">
+										<view class="analysis-title">
+											<text class="{{showWord ? 'select':''}}"
+												bindtap='clickWordHandle'>文字解析</text>
+											<text class="{{showVideo ? 'select':''}}"
+												bindtap='clickVideoHandle'>视频解析</text>
+										</view>
+										<block s-if="showWord">
+											<view class="word-analysis">
+												<template is="wxParse" data="{{{...mainque[globalIndex].subTopic[index].Explanation}}}" />
+											</view>
+										</block>
+										<block s-if="showVideo">
+											<view class="video-analysis">
+												<video src="{{mainque[globalIndex].subTopic[index].videocode}}"></video>
+											</view>
+
+										</block>
+
+									</view>
+									<view class="exam-point">
+										<view class="exam-title">考点</view>
+										<view class="exam-content">
+										 {{mainque[globalIndex].subTopic[index].knowpoint}}
+										</view>
+									</view>
+									<view class="topic-source">
+										<view class="topic-source-title">来源</view>
+										<view class="topic-info">
+											亿题库
+										</view>
+									</view>
+
+								</view>
+							</view>
+							<!-- 答案解析结束 -->
+							<!-- 答案解析结束 -->
+
+
+
+						</scroll-view>
+					</swiper-item>
+
+				</block>
+			</swiper>
+		</view>
+	</view>
+	<!-- 组合题 -->
+</view>

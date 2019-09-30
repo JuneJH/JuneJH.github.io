@@ -1,0 +1,97 @@
+<view class="container">
+	<!--to do-->
+	<view class="counts">
+		<view class="studycount">
+			<view class='circleBar'>
+				<view class="wrap">
+					<view class="top">
+                       
+						<canvas class="cir" style=' width:169rpx; height:169rpx;' hidden='{{show}}' canvas-id="canvasArc">  
+                        </canvas>
+                        <view class="centerWord">{{resultComment}}</view>
+						<view class="studypropers">学习进度</view>
+						 <image class="canvasImg" s-if="{{show}}" src="{{radarImg}}" ></image>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="studyhour">
+			<view s-if="{{isversion2}}" class="version-left  {{version!=2?'selectcolor':'noselectcolor'}}"
+				data-version="1" bindtap="getdatalist">最新版</view>
+			<view class="studyhour_font">{{studyhour}}时{{studymin}}分</view>
+			<view class="smallstudy">已学</view>
+			<view class="Y"></view>
+		</view>
+		<view class="studytotle">
+			<view s-if="{{isversion2}}" class="version-right   {{version==2?'selectcolor':'noselectcolor'}}"
+				data-version="2" bindtap="getdatalist">上期版</view>
+			<view class="studyhour_font">{{totlehour}}时{{totlemin}}分</view>
+			<view class="smallstudy">总学时</view>
+		</view>
+	</view>
+
+	<!-- 章 -->
+	<view s-for="list">
+		<view class="geli"></view>
+		<view class="content" bindtap="onclickpin" data-fstid="{{index}}">
+			<view class="display">
+				<image class="imagess" src="/images/展开.png" s-if="!pinarr[index]"></image>
+				<image class="imagess" src="/images/收缩.png" s-if="pinarr[index]"></image>
+				<view class="bigchapter">{{item.one}}</view>
+			</view>
+			<view class="display">
+				<progress class="progress" active='true' percent="{{item.jindu*100}}" activeColor="#FFA800"
+					backgroundColor="#E6E6E6" stroke-width="7" />
+				<view class="percent_text"><text>{{item.jindu*100}}%</text></view>
+			</view>
+		</view>
+
+		<!-- 节 -->
+		<view s-if="pinarr[index]">
+
+			<view s-for="item,sndid in item.onelist">
+				<view class="smallgelis"></view>
+				<view class="content-chapter" bindtap="onclickzhang" data-fstid="{{index}}" data-sndid="{{sndid}}">
+					<view class="display">
+						<image class="imagess" src="/images/收缩.png" s-if="snd[index][sndid]"></image>
+						<image class="imagess" src="/images/展开.png" s-if="!snd[index][sndid]"></image>
+						<view class="mchapter"><text>{{item.two}}</text></view>
+					</view>
+				</view>
+
+				<view s-if="snd[index][sndid]">
+
+					<!-- 课 -->
+					<view s-for="item,trdid in item.twolist">
+						<view class="content-chapters" bindtap="gotovideo" data-vedio="{{item.vid}}"
+							data-isbuy="{{item.isbuy}}" data-isfree="{{item.isfree}}">
+							<view class="display">
+								<view class="Y-axis"></view>
+								<image class="imagess-point" src="/images/小白点.png"></image>
+								<view style=" margin-left: 29rpx;" class="trdmchapter">{{item.title}}
+								</view>
+
+								<view s-if="{{item.isfree==1 || item.isbuy==1}}">
+									<view>
+										<image class="vediostar" src="/images/play.png"></image>
+										<view class="cache" s-if="cache">已缓存</view>
+									</view>
+								</view>
+								<view s-else>
+									<view s-if="{{systemis==1}}" class="buychapter"><text>领资料</text></view>
+									<view s-else class="buychapter1"><text>购买</text></view>
+
+								</view>
+
+
+							</view>
+						</view>
+						<view class="smallgelis"></view>
+					</view>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</view>
+<login-entry modal='{{click}}' bindsendEvent='sonData' />

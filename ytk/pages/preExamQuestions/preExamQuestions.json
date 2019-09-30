@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "考前押题",
+     "usingComponents": {
+        "login-entry": "/components/login-entry/login-entry"
+    }
+}

@@ -1,0 +1,3 @@
+<view class="content">
+	<rich-text nodes="{{content}}" selectable="false"></rich-text>
+</view>

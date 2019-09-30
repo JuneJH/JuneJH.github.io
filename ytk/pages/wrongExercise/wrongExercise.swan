@@ -1,0 +1,59 @@
+<view class='tab flex flexSa '>
+	<view class='{{flag == 0 ? "tab_on" : ""}}' data-current="0" bindtap='changeTab'>
+		<view class="size">错题</view>
+		<view class='tab_li_line'></view>
+	</view>
+	<view class='{{flag == 1 ? "tab_on" : ""}}' data-current="1" bindtap='changeTab'>
+		<view class="size">收藏</view>
+		<view class='tab_li_line'></view>
+	</view>
+</view>
+
+<!-- 章节错题 -->
+<view class="content" hidden='{{flag != 0}}'>
+	<view s-if="{{wrongchapterlist.total>0}}">
+		<block s-for="ele,index in wrongchapterlist.list">
+			<view s-if="{{ele.quecount>0}}">
+				<view class="exams-wrap" bindtap="getWpaper" data-index="{{index}}">
+					<view class="exam-title">{{ele.title}}</view>
+					<view>
+						<view class="number">共{{ele.quecount}}道</view>
+						<view class="viewparse" catchtap="getwrongpaper" data-index="{{index}}">
+							查看解析<view class="arrow"></view>
+						</view>
+					</view>
+					<view class="right-dir"></view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view s-else>
+		<view class="nocontent-icon"></view>
+		<view class="nocontent">暂无内容~</view>
+	</view>
+</view>
+<!-- 收藏 -->
+<view class="content" hidden='{{flag != 1}}'>
+	<view s-if="{{collectionchapterlist.list.length>0}}">
+		<block s-for="ele,index in collectionchapterlist.list">
+			<view s-if="{{ele.quecount>0}}">
+				<view class="exams-wrap" bindtap="getCpaper" data-index="{{index}}">
+					<view class="exam-title">{{ele.title}}</view>
+					<view>
+						<view class="number">共{{ele.quecount}}道</view>
+						<view class="viewparse" catchtap="getcollectionpaper" data-index="{{index}}">
+							查看解析<view class="arrow"></view>
+						</view>
+					</view>
+					<view class="right-dir"></view>
+				</view>
+			</view>
+		</block>
+	</view>
+    <view s-else>
+		<view class="nocontent-icon"></view>
+		<view class="nocontent">暂无内容~</view>
+	</view>
+
+</view>
+<login-entry modal='{{click}}' />

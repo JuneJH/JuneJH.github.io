@@ -1,0 +1,81 @@
+.banner2 {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #9370DB;
+}
+.system-course{
+    display: inline-block;
+    width:65px;
+    height:65px;
+    background:url('../img/system-logo.png') no-repeat left top/100%;
+    margin:59px 0 43px;
+}
+.topic-title{
+    display: inline-block;
+    width:65px;
+    height:65px;
+    background:url('../img/topic-logo.png') no-repeat left top/100%;
+    margin:59px 0 43px;
+}
+.systemcourse_words_black.topic-title-1{
+   font-size: 48px;
+   color:#FFFFFF;
+}
+.systemcourse_words_white.topic-title-2{
+    color:#433D3D;
+    font-weight: 600;
+    font-size: 24px;
+}
+.system-title{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+
+.glyphicon-cog {
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.systemcourse_words_white {
+    /* font-size: 25px; */
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+
+.systemcourse_words_black {
+    color: #433D3D;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 79px;
+}
+
+.container2 {
+    padding-top: 40px;
+
+}
+
+.caption {
+    background-color: #FFFFFF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.words_Violet{
+    color: #9370DB;
+}
+
+
+.banner2_tk{
+	background-color:rgb(255,113,112);
+}
+.words_red{
+	color: rgb(255,113,112);
+}
+.glyphicon-headphones{
+	font-size: 50px;
+	color: #FFFFFF;
+	margin-bottom: 30px;
+}

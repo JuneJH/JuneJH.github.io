@@ -1,0 +1,75 @@
+.containner {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+    background: #EDF1F5;
+    font-family: PingFang SC;
+    font-size: 30rpx;
+}
+.high_pint {
+    background: white;
+}
+.right {
+    margin-top: 50rpx;
+    width: 14rpx;
+    height: 8rpx;
+    background: rgba(255, 170, 4, 1);
+    border-radius: 4rpx;
+}
+.nav {
+    width: 1rpx;
+    height: 1rpx;
+    position: relative;
+    top: -20rpx;
+    left: 85%;
+}
+.high_pint_tittle {
+    position: relative;
+    top: -35rpx;
+    left: 40rpx;
+    font-size: 40rpx;
+    font-weight: 500;
+    color: #333333;
+    line-height: 25px;
+    overflow: hidden;
+}
+.buy_button {
+    width: 88rpx;
+    height: 40rpx;
+    background: rgba(255, 170, 4, 1);
+    border-radius: 20rpx;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 40rpx;
+    position: relative;
+    top: -72rpx;
+    left: 85%;
+    overflow: hidden;
+}
+.doPoint {
+    padding-left: 45rpx;
+    padding-top: 25rpx;
+    padding-bottom: 25rpx;
+    border-bottom: 2rpx solid #F2F2F2;
+}
+.lock {
+    width: 26rpx;
+    height: 28rpx;
+    position: relative;
+    left: 454rpx;
+}
+.high_mistake {
+    margin-top: 20rpx;
+    background: white;
+}
+.dateEnd {
+    font-size: 28rpx;
+    color: #B3B3B3;
+    float: right;
+    margin-top: -80rpx;
+    margin-right: 130rpx;
+    
+}

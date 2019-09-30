@@ -1,0 +1,212 @@
+body{
+    background-color:#f8f8f8;
+}
+
+
+.agreement-main{
+    width:1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 179px;
+}
+.agreement-main .agreement-nav{
+    height: 62px;
+    line-height: 62px;
+    text-align:left;
+    font-size:16px;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+}
+.agreement-main .agreement-nav a{
+    color:#F85C5B;
+    margin-right:20px;
+}
+.agreement-main .agreement-content{
+    background-color:#fff;
+    overflow: hidden;
+    padding: 0 30px;
+}
+.agreement-main .agreement-content h2{
+    font-size:26px;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    text-align: center;
+    margin:50px 0 51px;
+  
+}
+.agreement-main .agreement-content .agreement-detail{
+    padding:0 70px 35px;
+    border-bottom:1px solid #eeeeee;
+}
+.agreement-main .agreement-content .agreement-btn-wrap{
+    text-align: center;
+    height:164px;
+}
+.agreement-content .agreement-btn-wrap .agreement-btn{
+    width:260px;
+    height:44px;
+    border-radius:2px;
+    font-size:16px;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    margin:50px 0 22px;
+    background-color:#F85C5B;
+}
+.agreement-content .agreement-btn-wrap .agreement-btn:disabled{
+    background:rgba(153,153,153,1);
+
+}
+.agreement-content .agreement-btn-wrap p{
+    font-size:14px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+.agreement-content .agreement-btn-wrap p a{
+    font-size:14px;
+    font-weight:500;
+    color:rgba(248,92,91,1);
+}
+
+.write-mask{
+    width: 100%;
+    height:100%;
+    position:fixed;
+    left:0px;
+    top:0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index:999;
+    /* display: none; */
+}
+.write-mask .write-wrap{
+    position: absolute;
+    width:620px;
+    height:680px;
+    background-color:#fff;
+    border-radius:5px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    margin:auto;
+    text-align: center;
+    box-sizing:border-box;
+}
+.write-wrap h4{
+    font-size:20px;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    margin:44px 0 53px;
+}
+.write-wrap form label{
+    display: block;
+    margin-bottom: 15px;
+    text-align: right;
+    margin-right: 157px;
+
+}
+.write-wrap form label span{
+    font-size:14px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    margin-right: 30px;
+}
+.write-wrap form label input{
+    width:260px;
+    height:40px;
+    background:rgba(0,0,0,0.04);
+    border-radius:4px;
+    border:1px solid rgba(238,238,238,1);
+    font-size:14px;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    padding-left: 12px;
+}
+.write-wrap form label .test-time{
+    display: inline-block;
+    position: relative;
+}
+.write-wrap form label .test-time .test-time-ul{
+    position: absolute;
+    width:100%;
+    background:#F5F5F5;
+    left:0px;
+    top:46px;
+    border-radius:3px;
+    display: none;
+}
+.write-wrap form label .test-time .test-time-ul li{
+    width:259px;
+    height:40px;
+    line-height: 40px;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    text-align: left;
+    padding-left: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    width:100%;
+}
+.write-wrap form label .test-time .test-time-ul li:hover{
+    color:#FFFFFF;
+    background-color:#D3D3D3;
+}
+.write-wrap form label input[name="email"]{
+    width:155px;
+    height:40px;
+}
+.write-wrap form label .getEmail{
+    width:90px;
+    height:40px;
+    background:rgba(255,244,244,1);
+    border-radius:4px;
+    border:1px solid rgba(255,180,179,1);
+    font-size:12px;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin: 0px;
+    margin-left: 15px;
+}
+.write-wrap form .error-msg{
+    font-size:12px;
+    font-weight:400;
+    color:rgba(255,115,0,1);
+}
+.write-wrap form button{
+    width:120px;
+    height:42px;
+    background-color:#ECECEC;
+    border-radius: 3px;
+    font-size:16px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    margin-top:38px;
+}
+.write-wrap form button.confirm-btn{
+    color: #FFFFFF;
+    background-color:#F85C5B;
+    margin-left: 40px;
+}
+
+.xiala::after{
+    content:'';
+    display: inline-block;
+    width:17px;
+    height:10px; 
+    vertical-align: 2px;
+    right:12px;
+    top:16px;
+    position: absolute;
+    background: url("../img/pay-ico.png")no-repeat -153px -6px;
+}
+.shangla::after{
+    content:'';
+    display: inline-block;
+    width:17px;
+    height:10px; 
+    right:12px;
+    top:16px;
+    position: absolute;
+    background: url("../img/pay-ico.png")no-repeat -172px -6px;
+    vertical-align: 2px;
+}

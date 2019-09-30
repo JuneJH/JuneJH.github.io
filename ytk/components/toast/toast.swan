@@ -1,0 +1,7 @@
+<view class="toast_content_box" s-if="{{isShow}}">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+       {{dataText}}
+    </view>  
+  </view>  
+</view> 

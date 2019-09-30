@@ -1,0 +1,21 @@
+.warpper{
+    display: flex;
+}
+.input{
+    height: 100rpx;
+    flex: 1;
+    border-bottom: 2rpx solid #000;
+    margin: 0 10rpx;
+    font-size: 40rpx;
+   text-align: center;
+}
+
+.ipt{
+    width:0rpx;
+    height:0rpx;
+}
+.qwe{
+    overflow: hidden;
+    width: 0rpx;
+    height: 0rpx;
+}

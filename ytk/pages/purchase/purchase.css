@@ -1,0 +1,152 @@
+.main {
+    font-family: PingFang SC;
+    background-color: #eeeeee;
+}
+.top {
+    background: white;
+    padding: 33rpx 43rpx 35rpx 31rpx;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.msgs {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.cname {
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+.times {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(179, 179, 179, 1);
+    margin-top: 28rpx;
+}
+.cdata {
+    background: #ffffff;
+    height: 171rpx;
+    padding-top: 37rpx;
+}
+.chosetime {
+    width: 160rpx;
+    height: 94rpx;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 16rpx;
+    float: left;
+}
+.chosetimes {
+    width: 160rpx;
+    height: 94rpx;
+    background: rgba(255, 247, 231, 1);
+    border: 1px solid rgba(255, 170, 4, 1);
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 16rpx;
+    float: left;
+}
+.month {
+    padding-top: 18rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+.first {
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    padding-top: 34rpx;
+}
+.couts {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(255, 170, 4, 1);
+}
+.yct {
+    margin-top: 16rpx;
+    height: 106rpx;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: space-between;
+}
+.checktitle {
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(240, 34, 42, 1);
+    padding-top: 39rpx;
+    padding-left: 32rpx;
+}
+.noselect {
+    width: 38rpx;
+    height: 38rpx;
+    border: 2px solid rgba(204, 204, 204, 1);
+    border-radius: 50%;
+    margin: auto 0;
+    margin-right: 39rpx;
+}
+.select {
+    width: 38rpx;
+    height: 38rpx;
+    border: 2px solid rgba(204, 204, 204, 1);
+    border-radius: 50%;
+    margin: auto 0;
+    margin-right: 39rpx;
+    background: url("../../images/selectPrice.png") no-repeat 0 0/100% 100%;
+}
+.zf {
+    margin-top: 16rpx;
+    height: 106rpx;
+    background: rgba(255, 255, 255, 1);
+}
+.zleft {
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    float: left;
+    padding-top: 39rpx;
+    padding-left: 32rpx;
+}
+.zright {
+    padding-top: 42rpx;
+    margin-right: 32rpx;
+}
+.zq {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(179, 179, 179, 1);
+    text-decoration: line-through;
+    float: right;
+    margin-right: 15rpx;
+    margin-top: 5rpx;
+}
+.zh {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: rgba(243, 83, 52, 1);
+    float: right;
+}
+.pay {
+    position: fixed;
+    bottom: 17rpx;
+    width: 100%;
+}
+.pay button {
+    width: 688rpx;
+    height: 70rpx;
+    background: linear-gradient(
+        -9deg,
+        rgba(248, 168, 47, 1),
+        rgba(254, 204, 52, 1)
+    );
+    border-radius: 35rpx;
+    font-size: 34rpx;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+}
+button::after {
+    border: none;
+}

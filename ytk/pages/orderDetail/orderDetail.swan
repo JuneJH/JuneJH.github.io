@@ -1,0 +1,54 @@
+<view class="obligation-content">
+	<view class="obligation-head">
+		<view class="obligation-head-img"></view>
+		<view class="obligation-head-title">已付款</view>
+	</view>
+	<block s-for="ele in data.courselist">
+		<!-- 购买会员制 -->
+		<view class="obligation-group" s-if="ele.type=='buymembers'">
+			<view class="group-head">
+				<image class="obligation-img" src="{{ele.memberSystemCover}}" />
+				<view class="goodsname">{{ele.coursename}}-{{ele.memberSystemTitle}}</view>
+				<view>￥{{ele.memberSystemPrice}}</view>
+			</view>
+			<view class="pasttime">有效期至:{{validTime}}</view>
+		</view>
+		<!-- 购买选课 -->
+		<view class="obligation-group" s-else>
+			<view class="group-head">
+				<image class="obligation-img" src="{{ele.commodity_cover}}" />
+				<view class="goodsname">{{ele.coursename}}-{{ele.commodity_title}}</view>
+				<view>￥{{ele.price}}</view>
+			</view>
+			<view class="pasttime">有效期至:{{ele.validTime}}</view>
+		</view>
+	</block>
+	<view class="obligation-bottom">
+		<view class="ob-item">
+			<view class="pricelist">
+				<view class="company total-color">商品总价</view>
+				<view class="money price-color">￥{{data.totalprice}}</view>
+			</view>
+			<view class="pricelist">
+				<view class="company total-color">订单总价</view>
+				<view class="money price-color">￥{{data.totalprice}}</view>
+			</view>
+			<view class="pricelist">
+				<view class="company needpay-color">实付款</view>
+				<view class="money need-color">￥{{data.realprice}}</view>
+			</view>
+		</view>
+		<view class="order">
+			<view class="order-group">
+				<view class="total-color">订单编号:<text class="price-color">{{data.orderid}}</text></view>
+				<view class="total-color">订单创建时间:<text class="price-color">{{data.createtime}}</text></view>
+
+				<view class="total-color">订单完成时间:<text class="price-color">{{finishtime}}</text></view>
+
+			</view>
+		</view>
+	</view>
+
+
+
+</view>

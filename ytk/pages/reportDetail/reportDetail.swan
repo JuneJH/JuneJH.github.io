@@ -1,0 +1,179 @@
+<view class="detail-page">
+	<view class="head">
+		<view s-if="{{preScore == 0}}">
+			<view class="coursetitle">预估分</view>
+			<view class="not">暂无分数</view>
+		</view>
+		<view s-else>
+			<view class="coursetitle">{{coursetitle}}</view>
+			<view class="preScore">{{reportList.preScore}}</view>
+			<view class="company">预估分</view>
+		</view>
+	</view>
+
+	<view class="center">
+		<view class="center-head">
+			<view class="center-head-left">掌握分析</view>
+			<view class="totalKnowPointCount">
+				<view class="point"></view>
+				<text>共{{reportList.totalKnowPointCount}}个考点</text>
+			</view>
+		</view>
+
+		<view class="center-body">
+			<view class="canvas-left">
+				<view class="circle">
+					<canvas class="circle-canvas" canvas-id="Canvas"></canvas>
+                    <canvas class="white" canvas-id="whitecanvas"></canvas>
+				</view>
+			</view>
+			<view class="canvas-right">
+				<view class="canvas-company">
+					<view class="company-left master"></view>
+					<view class="company-right">掌
+						握{{reportList.masteredPecent}}</view>
+				</view>
+				<view class="canvas-company">
+					<view class="company-left weak"></view>
+					<view class="company-right">薄
+
+						弱{{reportList.weakPecent}}</view>
+				</view>
+				<view class="canvas-company">
+					<view class="company-left not-master"></view>
+					<view class="company-right">未
+
+						掌握{{reportList.unMasteredPercent}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="bottom">
+		<!-- tab选项卡 -->
+		<view class="tab flex flexSa {{scrollTop>320 ? 'topnavFixed' : 'topnavAbsolute'}}">
+			<view class='{{currentData == 0 ? "tab_on" : ""}}' data-current="0" bindtap='changeTab'>
+				<view>未掌握({{unMaster}})</view>
+				<view class='tab_li_line'></view>
+			</view>
+			<view class='{{currentData == 1 ? "tab_on" : ""}}' data-current="1" bindtap='changeTab'>
+				<view>薄弱({{weak}})</view>
+				<view class='tab_li_line'></view>
+			</view>
+			<view class='{{currentData == 2 ? "tab_on" : ""}}' data-current="2" bindtap='changeTab'>
+				<view>已掌握({{master}})</view>
+				<view class='tab_li_line'></view>
+			</view>
+		</view>
+		<!-- 选项卡下的内容 -->
+		<view class="tab-content">
+			<view hidden='{{currentData != 0}}'>
+				<view s-if="unMasteredPercent == 0">
+					<image class="notdataimg" src="/images/暂无相关数据.png"></image>
+					<view class="notdata">暂无相关数据~</view>
+				</view>
+				<!--to do-->
+				<view class="scroll-box">
+					<scroll-view class="exam-box" scroll-y="true">
+						<block s-for="reportList.unMasterList" s-for-item='item'>
+							<view class="exam-grup {{show[0][index]?'exam-show':'exam-hide'}}" data-index="{{index}}">
+								<view class="exams-wrap">
+									<view class="exams-group" bindtap="changeShow" data-index="{{index}}"  data-fstid="0">
+										<view class="add-icon"></view>
+										<text class="exam-title">{{item.title}}</text>
+									</view>
+								</view>
+								<block s-for="ele in item.knowPointList">
+									<view class="exam-item-wrap">
+										<view class="exam-item">
+											<view class="add-icon"></view>
+											<navigator class="exam-item-border"
+												url="/pages/doExam/doExam?courseid={{courseId}}&unitid={{ele.unitId}}&type=31"
+												hover-class="none">
+												<text class="exam-title">{{ele.title}}</text>
+												<view class="right-dir"></view>
+											</navigator>
+										</view>
+									</view>
+								</block>
+							</view>
+						</block>
+					</scroll-view>
+				</view>
+				<!-- end -->
+			</view>
+			<view hidden='{{currentData != 1}}'>
+				<view s-if="weakPecent == 0">
+					<image class="notdataimg" src="/images/暂无相关数据.png"></image>
+					<view class="notdata">暂无相关数据~</view>
+				</view>
+				<!--to do-->
+				<view class="scroll-box">
+					<scroll-view class="exam-box" scroll-y="true">
+						<block s-for="reportList.weakList" s-for-item='item'>
+							<view class="exam-grup {{show[1][index]?'exam-show':'exam-hide '}}"
+								data-index="{{index}}">
+								<view class="exams-wrap">
+									<view class="exams-group" bindtap="changeShow" data-index="{{index}}" data-fstid="1">
+										<view class="add-icon"></view>
+										<text class="exam-title">{{item.title}}</text>
+									</view>
+								</view>
+								<block s-for="ele in item.knowPointList">
+									<view class="exam-item-wrap">
+										<view class="exam-item">
+											<view class="add-icon"></view>
+											<navigator class="exam-item-border"
+												url="/pages/doExam/doExam?courseid={{courseId}}&unitid={{ele.unitId}}&type=31"
+												hover-class="none">
+												<text class="exam-title">{{ele.title}}</text>
+												<view class="right-dir"></view>
+											</navigator>
+										</view>
+									</view>
+								</block>
+							</view>
+						</block>
+					</scroll-view>
+				</view>
+				<!-- end -->
+			</view>
+			<view hidden='{{currentData != 2}}'>
+				<view s-if="masteredPecent == 0">
+					<image class="notdataimg" src="/images/暂无相关数据.png"></image>
+					<view class="notdata">暂无相关数据~</view>
+				</view>
+				<!--to do-->
+				<view class="scroll-box">
+					<scroll-view class="exam-box" scroll-y="true">
+						<block s-for="reportList.masterList" s-for-item='item'>
+							<view class="exam-grup {{show[2][index]?'exam-show':'exam-hide '}}"
+								data-index="{{index}}">
+								<view class="exams-wrap">
+									<view class="exams-group" bindtap="changeShow" data-index="{{index}}" data-fstid="2">
+										<view class="add-icon"></view>
+										<text class="exam-title">{{item.title}}</text>
+									</view>
+								</view>
+								<block s-for="ele in item.knowPointList">
+									<view class="exam-item-wrap">
+										<view class="exam-item">
+											<view class="add-icon"></view>
+											<navigator class="exam-item-border"
+												url="/pages/doExam/doExam?courseid={{courseId}}&unitid={{ele.unitId}}&type=31"
+												hover-class="none">
+												<text class="exam-title">{{ele.title}}</text>
+												<view class="right-dir"></view>
+											</navigator>
+										</view>
+									</view>
+								</block>
+							</view>
+						</block>
+					</scroll-view>
+				</view>
+				<!-- end -->
+			</view>
+		</view>
+	</view>
+</view>

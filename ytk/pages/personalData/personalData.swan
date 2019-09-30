@@ -1,0 +1,46 @@
+<view class="container">
+	<view class="personal_data">
+		<text class="head">头像</text>
+		<image src="{{userInfo.icon}}" class="icon"></image>
+		<!-- <open-data class="icon" type="userAvatarUrl"></open-data> -->
+		<view class="divLine"></view>
+	</view>
+	<view class="personal_data">
+		<text class="head">昵称</text>
+		<text class="head_icon_black">{{userInfo.nickName}}</text>
+		<!-- <open-data class="head_icon_black" type="userNickName"></open-data> -->
+		<view class="divLine"></view>
+	</view>
+	<view class="personal_data">
+		<text class="head">性别</text>
+       
+		<text class="head_icon_black">{{userInfo.sex=='3'?'未知':(userInfo.sex==1?'男':'女')}}</text>
+		<!-- <open-data class="head_icon_black" type="userGender"></open-data> -->
+	</view>
+
+	<view class="personal_data personal_data2">
+		<text class="head">用户名</text>
+		<text class="head_icon_black">{{userInfo.userName}}</text>
+	</view>
+	<!--弹出框-->
+	<!--监听button点击事件-->
+	<view class="logout" bindtap="listenerButton"><text>退出登录</text></view>
+
+	<modal class="modal-mask" s-if="{{hiddenModal}}">
+
+		<view class=' logout_alert'>
+			<view class="logout_tittle">
+				<text>确认要退出登录吗？</text>
+			</view>
+			<view class="confirm_blue" bindtap="cofirm">
+				<text>确认</text>
+			</view>
+		</view>
+		<view class="logout_alert_cnacel" bindtap="cancel">
+			<view class="cancel_red">
+				<text>取消</text>
+			</view>
+		</view>
+
+	</modal>
+</view>

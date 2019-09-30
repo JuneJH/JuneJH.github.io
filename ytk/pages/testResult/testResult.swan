@@ -1,0 +1,56 @@
+<view class="container">
+	<scroll-view scroll-y='true' class="content">
+		<!-- 得分 -->
+		<view class="accuracy-wrap">
+			<view class="score-wrap">
+				<text class="score">{{currentaccuracy}}</text>
+				<text class="unit">{{unit}}</text>
+				<view class="getScore">{{getScore}}</view>
+			</view>
+			<view class="all-score">{{allScore}}</view>
+
+
+
+		</view>
+		<!-- 答案 -->
+		<view class="answer-area">
+			<view class="describe">{{encourageText}}</view>
+			<view class="answer-flag">
+				<view class="do-right">做对 <text>({{doRight}})</text> </view>
+				<view class="do-wrong">做错 <text>({{doWrong}})</text> </view>
+				<view class="no-do">未做 <text>({{noDo}})</text> </view>
+				<view class="not-score">不支持判分 <text>({{noScroe}})</text> </view>
+			</view>
+			<view class="answer-detail">
+				<block  s-for="list">
+					<block  s-if="item.isright == 0">
+						<view class="no-do">{{index + 1}}</view>
+					</block >
+					<block s-elif="item.isright == 1">
+						<view class="right">{{index + 1}}</view>
+					</block>
+					<block s-elif="item.isright == 2">
+						<view class="wrong">{{index + 1}}</view>
+					</block>
+					<block s-elif="item.isright == 3">
+						<view class="not-score">{{index + 1}}</view>
+					</block>
+				</block >
+			</view>
+		</view>
+	</scroll-view>
+
+
+	<!-- 底部bar -->
+	<view class="my-tabBar">
+		<view class="analysis-wrong" bindtap='wrongAnalysisHandle'>
+			<text></text>
+			<text>错题解析</text>
+		</view>
+		<view class="analysis-all" bindtap='allAnalysisHandle'>
+			<text></text>
+			<text>全部解析</text>
+		</view>
+		<view class="rePractice-btn" bindtap='submitBtnHandle'>{{btnText}}</view>
+	</view>
+</view>

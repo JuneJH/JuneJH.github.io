@@ -1,0 +1,74 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/networkAnomaly/networkAnomaly",
+        "pages/receiveDataNext/receiveDataNext",
+        "pages/login/retrieve/retrieve",
+        "pages/login/newpassword/newpassword",
+        "pages/chapterVedio/chapterVedio",
+        "pages/learnReport/learnReport",
+        "pages/reportDetail/reportDetail",
+        "pages/subject/subject",
+        "pages/exam/exam",
+        "pages/noticeIndex/noticeIndex",
+        "pages/noticeDetails/noticeDetails",
+        "pages/personalData/personalData",
+        "pages/chapter/chapter",
+        "pages/answerKey/answerKey",
+        "pages/doExam/doExam",
+        "pages/testResult/testResult",
+        "pages/evaluate/evaluate",
+        "pages/purchase/purchase",
+        "pages/vediochapter/vediochapter",
+        "pages/wrongExercise/wrongExercise",
+        "pages/order/order",
+        "pages/obligationDetail/obligationDetail",
+        "pages/orderDetail/orderDetail",
+        "pages/practiceList/practiceList",
+        "pages/highQuestionBank/highQuestionBank",
+        "pages/pastYearsQuestion/pastYearsQuestion",
+        "pages/simulatedTest/simulatedTest",
+        "pages/preExamQuestions/preExamQuestions",
+        "pages/examPoint/examPoint",
+        "pages/login/login",
+        "pages/login/verification/verification",
+        "pages/login/userRegisterAgreement/userRegisterAgreement",
+        "pages/login/privacyPolicy/privacyPolicy",
+        "pages/receiveData/receiveData",
+        "pages/customerService/customerService"
+        
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#FECC34",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "亿题库网",
+        "backgroundColor": "#FFF",
+        "backgroundTextStyle": "dark"
+    },
+    "tabBar": {
+        "color": "#a2a2a2",
+        "selectedColor": "#FECC34",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/首页-1.png",
+                "selectedIconPath": "images/首页.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/chapter/chapter",
+                "iconPath": "images/章节课-1.png",
+                "selectedIconPath": "images/章节课.png",
+                "text": "章节课"
+            },
+            {
+                "pagePath": "pages/login/login",
+                "iconPath": "images/我的-1.png",
+                "selectedIconPath": "images/我的.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

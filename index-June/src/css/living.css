@@ -1,0 +1,340 @@
+@import "reset.css";
+html,body{
+    background-color: #1F1F1F;
+    width:100%;
+    height:100%;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear:both;
+}
+/* 引入登录 */
+.login-area{
+    position: fixed;
+    width: 100%;
+    height:100%;
+    z-index: 9999;
+    display: none;
+    border:none;
+}
+.login{
+    width:38px;
+    height:38px;
+    margin:78px 21px 0px;
+    display: none;
+}
+.login img{
+    width:100%;
+    height: 100%;
+    border-radius:50%;
+}
+.living-main{
+    width:100%;
+    height:100%;
+}
+.left-nav{
+    width:80px;
+    height:100%;
+    background-color:#000;
+    float: left;
+}
+.left-nav .logo{
+    text-align: center;
+    margin:22px 16px 0 16px;
+}
+.left-nav .logo a{
+    display: inline-block;
+    overflow: hidden;
+    height: 0px;
+    padding-top:60px;
+    background:url("../img/log-no-bg.png")no-repeat;
+}
+.left-nav button{
+    font-size:14px;
+    font-weight:300;
+    color:#ECECEC;
+    display: block;
+    text-align: center;
+    margin-left: 19px;
+}
+.left-nav button.index-login-btn{
+    margin: 74px 19px 17px;
+}
+.right-main{
+    width:calc(100% - 80px);
+    height:100%;
+    float:right;
+}
+.right-main .living-main{
+    width:1148px;
+    height:738px;
+    margin:0.5% auto;
+}
+.right-main .living-main .living{
+    float: left;
+    width:492px;
+    height:368px;
+    /* 占位图 */
+    background:url("../img/living-cover.png")no-repeat;
+}
+.right-main .living-main .ppt{
+    width:656px;
+    height:368px;
+    float:right;
+    background:url("../img/living-ppt.png")no-repeat;
+}
+.right-main .living-main .get-data{
+    float: left;
+    width:492px;
+    height:370px;
+    background-color:#2D2D2C
+}
+.right-main .living-main .get-data .scan{
+    display: inline-block;
+    width:203px;
+    height:240px;
+    background-color:#fff;
+    margin:71px 0 59px 35px;
+    border-radius:2px;
+}
+.get-data .scan h5{
+    font-size:20px;
+    font-weight:600;
+    color:rgba(160,33,33,1);
+    text-align:center;
+    margin:19px 0 8px;
+}
+.get-data .scan p{
+    text-align:center;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+}
+.get-data .scan .ewm-area{
+    margin: 10px 40px;
+    /* 可删 */
+    width:123px;
+    height:122px;
+    background:url("../img/login-ewm.png")no-repeat;
+}
+.get-data .get-btn-wrap{
+    display: inline-block;
+    vertical-align: top;
+}
+.get-data .get-btn-wrap h3{
+    font-size:20px;
+    font-weight:400;
+    color:rgba(248,92,91,1);
+    margin:150px 0 44px 22px;
+    text-align: center;
+}
+.get-data .get-btn-wrap .get-btn{
+    width:91px;
+    height:38px;
+    background-color:#F85C5B;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(249,249,249,1);
+    margin-left:72px;
+    border-radius:20px;
+}
+.right-main .living-main .chat{
+    width:656px;
+    height:370px;
+    background:#353535;
+    float:right;
+    margin-bottom:6px;
+}
+.chat .chat-record-wrap{
+    width: 100%;
+    height: 311px;
+    overflow:hidden;
+}
+.chat .chat-record-wrap .chat-record{
+    width:calc(100% + 17px);
+    height: 100%;
+    overflow-y: scroll;
+    padding:16px 21px;
+    box-sizing: border-box;
+}
+.chat .chat-scan{
+    width:656px;
+    height:58px;
+    background-color:#3B3B3B;
+    padding:10px 0px 10px 20px;
+    box-sizing:border-box;
+    position: relative;
+}
+.chat .chat-scan input{
+    width:395px;
+    height:38px;
+    background-color:#333333;
+    padding:0 0 0 46px;
+    box-sizing: border-box;
+    color:#fff;
+    font-size:16px;
+
+}
+.chat .chat-scan span{
+    top:18px;
+    left:32px;
+    position: absolute;
+    display: inline-block;
+    width:23px;
+    height:23px;
+    background: url("../img/biaoqing.png")no-repeat;
+}
+.chat .chat-scan input::placeholder{
+    font-size:16px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+.chat .chat-scan .send-btn{
+    width:81px;
+    height:38px;
+    background-color:#F85C5B;
+    border-radius:3px;
+    font-size:16px;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-left: 10px;
+    padding:0;
+    vertical-align: -2px;
+
+}
+.chat .chat-scan .free-btn{
+    width:114px;
+    height:38px;
+    background-color:#FFB432;
+    font-size:16px;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-left:10px;
+    padding:0;
+    border-radius:3px;
+    vertical-align: -2px;
+    position: relative;
+}
+.chat .chat-scan .free-btn::after{
+    content:'1';
+    position: absolute;
+    width:18px;
+    height:18px;
+    text-align: center;
+    line-height: 18px;
+    border-radius:50%;
+    background-color:#F85C5B;
+    top:-9px;
+    right:-9px;
+    font-size:12px;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+.chat-record .chat-item{
+    margin-bottom: 16px;
+}
+.chat-record .chat-item .device{
+    display: inline-block;
+    width:16px;
+    height:16px;
+    background:url("../img/shouji.png")no-repeat center center;
+}
+.chat-record .chat-item .device.comp{
+    background:url("../img/diannao.png")no-repeat center center;
+}
+.chat-record .chat-item .device.myself{
+    background:none;
+}
+.chat-record .chat-item .device.myself::after{
+    content:'我:';
+    font-size:14px;
+    font-weight:400;
+    color:rgba(184,133,61,1);
+    margin-left: 1px;
+}
+.chat-record .chat-item .user-info{
+    display: inline-block;
+    vertical-align: top;
+}
+.chat-record .chat-item .user{
+    font-size:14px;
+    font-weight:400;
+    color:rgba(127,127,127,1);
+    vertical-align: 2px;
+   
+}
+.chat-record .chat-item .chat-content{
+    max-width: 490px;
+    font-size:14px;
+    font-weight:300;
+    color:rgba(255,255,255,1);
+    line-height:18px;
+    display: inline-block;
+    vertical-align: 2px;
+    margin-left:10px;
+}
+/* 弹窗 */
+.audition-mask{
+    width: 100%;
+    height:100%;
+    position:fixed;
+    left:0px;
+    top:0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index:999;
+    display: none;
+}
+.audition-mask .audition-wrap{
+    position: absolute;
+    width:520px;
+    height:450px;
+    background:rgba(255,255,255,1);
+    border-radius:5px 8px 8px 8px;
+    border-radius:5px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    margin:auto;
+    text-align: center;
+    box-sizing:border-box;
+}
+.audition-mask .audition-wrap{
+    width:420px;
+    height:260px;
+}
+.close-btn{
+    width:16px;
+    height:16px;
+    background:url("../img/close.png") no-repeat;
+    border-radius:3px;
+    position: absolute;
+    right:20px;
+    top:21px;
+    cursor:pointer;
+}
+.audition-mask .audition-wrap h4{
+    font-size:20px;
+    font-weight:500;
+    margin: 30px 0 34px;
+    color:rgba(51,51,51,1);
+}
+.audition-mask .audition-wrap p{
+    font-size:18px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin:0 auto;
+    line-height: 1.5;
+}
+.audition-mask .audition-wrap .now-login-btn{
+    width:260px;
+    height:42px;
+    background-color: #F85C5B;
+    border-radius:5px;
+    font-size:16px;
+    font-weight:400;
+    margin-top:50px;
+    color:rgba(255,255,255,1);
+}

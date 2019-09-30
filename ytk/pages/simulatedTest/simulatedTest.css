@@ -1,0 +1,73 @@
+.container {
+    width: 100%;
+    font-family: PingFang SC;
+}
+.content {
+    height: 181rpx;
+    border-bottom: 2rpx solid #F2F2F2;
+}
+.banner {
+    margin-left: 32rpx;
+}
+.banner-left {
+    width: 621rpx;
+    float: left;
+}
+.title {
+    height: 77rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin-top: 34rpx;
+}
+.progressBar {
+    height: 22rpx;
+    margin-top: 29rpx;
+}
+.progressBar view {
+    float: left;
+}
+.progress {
+    width: 200rpx;
+    overflow: hidden;
+    border-radius: 8rpx;
+    margin-top: 7rpx;
+}
+.progressBar .progress-inner-bar {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 222, 103, 1),
+        rgba(255, 168, 0, 1)
+    );
+}
+.num {
+    font-size: 22rpx;
+    font-weight: 500;
+    color: #B3B3B3;
+    margin-left: 24rpx;
+}
+.num text {
+    margin-left: 4rpx;
+}
+.percent {
+    color: rgba(255, 169, 3, 1);
+    margin-right: 4rpx;
+}
+.person {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(178, 178, 178, 1);
+    margin-left: 42rpx;
+}
+.right-dir {
+    width: 14rpx;
+    height: 26rpx;
+    float: right;
+    margin: 86rpx 31rpx 0rpx 0rpx;
+    background: url("../../images/返回.png") no-repeat 0 0/100% 100%;
+}

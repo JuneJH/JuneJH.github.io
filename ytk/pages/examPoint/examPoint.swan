@@ -1,0 +1,39 @@
+<view class="container">
+	<!--to do-->
+	<view class="scroll-box">
+		<scroll-view class="exam-box" scroll-y="true">
+			<block s-for="unitlist" s-for-item='item' s-for-index="index">
+				<view class="exam-grup {{show[index]?'exam-show':'exam-hide '}}" data-index="{{index}}">
+					<view class="exams-wrap">
+						<view class="exams-group" bindtap="changeShow" data-index="{{index}}">
+							<view class="add-icon"></view>
+							<text class="exam-title">{{item.title}}}</text>
+							<view class="right-dir" catch:tap='getTopicHandle' data-idname="{{index}}"
+								data-unitid="{{item.unitid}}" data-title="{{item.title}}"></view>
+						</view>
+					</view>
+					<block s-for="e,i in item.knowPointList">
+						<view class="exam-item-wrap" bindtap='getTopicHandle' data-idname="{{index}}{{i}}"
+							data-kpid="{{e.knowPointId}}" data-unitid="{{item.unitid}}" data-title="{{e.title}}">
+							<view class="exam-item">
+								<view class="add-icon"></view>
+								<view class="exam-item-border">
+									<text class="exam-title">{{e.title }}</text>
+									<view class="right-dir"></view>
+								</view>
+							</view>
+						</view>
+					</block>
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+	<view class="go-practice-wrap" s-if="goonshow">
+		<view class="go-practice" bindtap="getTopicHandle" data-flag="1" data-kpid="{{pointkpid}}"
+			data-idname="{{idname}}" data-unitid="{{pointunitid}}">
+			<text class="exam-type">{{pointtitle}}</text>
+			<image src="../../images/jixulianxi.png"></image>
+		</view>
+	</view>
+</view>
+<login-entry modal='{{click}}' />

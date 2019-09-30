@@ -1,0 +1,15 @@
+.content{
+    text-align: center;
+    width: 300rpx;
+    height: 600rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250rpx;
+    margin-left: -150rpx;
+    color: #ccc;
+}
+image{
+    width: 280rpx;
+    height: 260rpx;
+}

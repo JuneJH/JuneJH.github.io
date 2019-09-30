@@ -1,0 +1,442 @@
+body{
+    background-color:#f8f8f8;
+}
+.tc-main{
+    width:65%;
+    min-width: 1200px;
+    margin: 20px auto 100px;
+}
+.tc-main .tc-left{
+    width: 900px;
+    float: left;
+}
+.tc-main .tc-left .tc-object{
+    height: 266px;
+    padding: 0 30px;
+    background-color:#fff ;
+    position: relative;
+}
+.tc-main .tc-left .tc-object .to-nav{
+    border-bottom: 1px solid #eee;
+    height: 80px;
+    line-height: 80px;
+}
+.tc-main .tc-left .tc-object .to-nav>span{
+    font-size: 16px;
+    margin-right: 40px;
+    position: relative;
+    cursor: pointer;
+    color:#222;
+    font-weight: 600;
+}
+.tc-main .tc-left .tc-object .to-nav>span::after{
+    content:'';
+    position:absolute;
+    width: 0px;
+    height: 3px;
+    background-color:#f85c5b;
+    bottom:-6px;
+    left:50%;
+    transition:all .6s;
+    border-radius: 5px;
+}
+.tc-main .tc-left .tc-object .to-nav>span.select::after,
+.tc-main .tc-left .tc-object .to-nav>span:hover::after{
+    width: 100%;
+    left: 0;
+}
+.tc-main .tc-left .tc-object .to-nav>span.select{
+    color:#f85c5b;
+}
+/* 未登录的样式开始 */
+.no-login{
+    width:900px;
+    height:186px;
+    text-align: center;
+    position: absolute;
+    background-color:rgba(255, 255, 255, 0.9);
+    top:82px;
+    left:0px;
+    /* display: none; */
+}
+.no-login>p{
+    margin-top:46px;
+    font-size:18px;
+    font-weight:400;
+    color:rgba(85,85,85,1);
+}
+.no-login .login-btn{
+    width:100px;
+    height:38px;
+    background:rgba(248,92,91,1);
+    border-radius:5px;
+    border:none;
+    outline: none;
+    color:#fff;
+    font-size:16px;
+    margin-top:46px;
+}
+/* 弹窗 */
+.do-topic,
+.brush-type-mask{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, .6);
+    z-index: 9999;
+    top:0;
+    left:0;
+    display: none;   
+}
+.do-topic .no-login-tip{
+    position: absolute;
+    width:420px;
+    height:440px;
+    background-color:#fff;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin: auto;
+    text-align: center;
+    border-radius:5px;
+
+}
+.do-topic .no-login-tip .login-ico{
+    height:117px;
+    width:161px;
+    display: inline-block;
+    margin-top:113px;
+    background: url("../img/now-login.png")no-repeat
+}
+.do-topic .no-login-tip>p{
+    font-size:16px;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin-top:29px;
+}
+.do-topic .no-login-tip .tip-btn{
+    margin-top:74px;
+    padding:0 70px;
+}
+.do-topic .no-login-tip .tip-btn>button{
+    width:120px;
+    height:42px;
+    font-size:18px;
+    font-weight:400;
+    color:#999999;
+    background-color: #ECECEC;
+}
+.do-topic .no-login-tip .tip-btn .now-login-btn{
+    background-color:#F85C5B;
+    font-size:18px;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-right: 35px;
+}
+.do-topic .no-login-tip .close-btn,
+.brush-type-mask .brush-type .close-btn{
+    width:13px;
+    height:13px;
+    background:url("../img/close.png") no-repeat;
+    border-radius:3px;
+    position: absolute;
+    right:20px;
+    top:21px;
+    cursor:pointer;
+}
+/* 刷题弹窗 */
+.brush-type-mask .brush-type{
+    width:520px;
+    height:310px;
+    background:rgba(255,255,255,1);
+    border-radius:8px;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+.brush-type-mask .brush-type .title{
+    font-size:22px;
+    font-weight:500;
+    color:rgba(34,34,34,1);
+    text-align: center;
+    margin-top:27px;
+}
+.brush-type-mask .brush-type .practice,
+.brush-type-mask .brush-type .test{
+    width:200px;
+    display: inline-block;
+    margin-top:40px;
+    text-align: center;
+    margin-left:35px;
+}
+.brush-type-mask .brush-type .practice .img,
+.brush-type-mask .brush-type .test .img{
+    width:200px;
+    height:120px;
+    background-color: #FFECEC;
+    padding: 36px 78px;
+    box-sizing: border-box;
+    border-radius:2px;
+    margin-bottom: 20px;
+    transition: all .3s;
+}
+.brush-type-mask .brush-type .practice h5,
+.brush-type-mask .brush-type .test h5{
+    font-size:16px;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    margin-bottom: 10px;
+}
+.brush-type-mask .brush-type .practice p,
+.brush-type-mask .brush-type .test p{
+    font-size:14px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+.brush-type-mask .brush-type .practice .img:hover,
+.brush-type-mask .brush-type .test .img:hover{
+     box-shadow: 0px 1px 5px 1px #ddd;
+}
+/* 未登录的样式结束 */
+
+/* 未购买样式开始 */
+.no-buy-tip{
+    width:900px;
+    height:671px;
+    background-color:rgba(255, 255, 255, 0.85);
+    border-radius:5px;
+    position: absolute;
+    top:2px;
+    left:-30px;
+    z-index: 99;
+    text-align: center;
+    display: none;
+}
+.no-buy-tip .tip{
+    text-align: center;
+    font-size:18px;
+    font-weight:400;
+    color:rgba(85,85,85,1);
+    margin-top:279px;
+    margin-bottom: 38px;
+}
+.no-buy-tip .now-buy{
+    width:100px;
+    height:38px;
+    background:rgba(248,92,91,1);
+    border-radius:5px;
+    font-size:16px;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+/* 未购买样式结束 */
+.tc-content{
+    display: none;
+}
+.tc-content.accounting{
+    display: block
+}
+.tc-content .tc-tab .tab-ul>li{
+    float: left;
+    width: 209px;
+    height: 190px;
+    text-align:center;
+    line-height: 1.5;
+}
+.tc-content .tc-tab .tab-ul>li>p{
+    color:#999;
+    font-size: 12px;
+}
+.tc-content .tc-tab .tab-ul>li>span{
+    font-size: 30px;
+    font-weight: 700;
+    color:#34a4ff;
+    margin-top:60px;
+    display: inline-block;
+}
+.tc-content .tc-tab .tab-ul>li:nth-child(2)>span{
+    color:#fcae00;
+}
+.tc-content .tc-tab .tab-ul>li:nth-child(3)>span{
+    color:#ff484c;
+}
+.tc-content .tc-tab .tab-ul>li:nth-child(4)>span{
+    color:#64db1d;
+}
+.tc-content .tc-tab .tab-ul>li>span:nth-child(2){
+    font-size:14px;
+    color:#000;
+    font-weight: 200;
+}
+.tc-subject{
+    margin-top: 20px;
+    background-color: #fff;
+    padding:0 30px;
+}
+.tc-subject .ts-nav{
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    line-height: 60px;
+}
+.tc-main .tc-left .tc-subject .ts-nav>span{
+    font-size: 16px;
+    color:#222;
+    font-weight:400;
+    margin-right: 33px;
+    position: relative;
+    cursor: pointer;
+}
+.tc-main .tc-left .tc-subject .ts-nav>span>i{
+    display: inline-block;
+    width:28px;
+    height:16px;
+    vertical-align: -3px;
+    background:url("../img/topic-ico.png")no-repeat -98px -8px;
+}
+.tc-main .tc-left .tc-subject .ts-nav>span.select>i{
+    background:url("../img/topic-ico-red.png")no-repeat  -98px -8px;
+
+}
+.tc-main .tc-left .tc-subject .ts-nav>span::after{
+    content:'';
+    position:absolute;
+    width: 0px;
+    height: 3px;
+    background-color:#f85c5b;
+    bottom:-20px;
+    left:50%;
+    transition:all .6s;
+    border-radius: 5px;
+    margin-bottom: -1px;
+}
+.tc-main .tc-left .tc-subject .ts-nav>span.select::after,
+.tc-main .tc-left .tc-subject .ts-nav>span:hover::after{
+    width: 110%;
+    left: -5%;
+}
+.tc-main .tc-left .tc-subject .ts-nav>span.select{
+    color:#f85c5b;
+}
+.ts-do{
+    display: none;
+}
+.ts-tab{
+    position: relative;
+    /* height: 671px; */
+    /* overflow: hidden; */
+/* 这里需求不明，如果向下滑动请打开 */
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+}
+.ts-tab>.select{
+    display: block;
+}
+.ts-do>ul>li{
+    margin: 0 20px;
+    position: relative;
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+    color:#222;
+    font-weight: 400;
+}
+.ts-do>ul>li .topic-total{
+    position: absolute;
+    right:125px;
+    color:#999;
+    font-size: 14px;
+}
+.ts-do>ul>li .now-do{
+   position: absolute;
+   right:0;
+   top:50%;
+   line-height: 32px;
+   text-align: center;
+   margin-top:-15px;
+   width: 80px;
+   height: 32px;
+   border:1px solid #F85C5B;
+   color:#F85C5B;
+   border-radius: 5px;
+   font-size: 16px;
+}
+
+
+.tc-main .tc-right{
+    width: 280px;
+    float: right;
+}
+.tc-main .tc-right .self-tc{
+    width: 280px;
+    height: 100px;
+    background-color:#fff;
+    margin-bottom: 20px;
+    font-size: 0;
+}
+.tc-main .tc-right .self-tc .self-btn{
+    width: 93px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    color:#999;
+}
+.tc-main .tc-right .self-tc .self-btn:hover{
+    color:#ff484c;
+}
+.tc-main .tc-right .self-tc .self-btn:hover>a>span{
+    background:url("../img/topic-ico-red.png")no-repeat;
+}
+.tc-main .tc-right .self-tc .self-btn:first-of-type:hover>a>span{
+    background-position: -64px 0px;
+}
+.tc-main .tc-right .self-tc .self-btn>a>span{
+    width:30px;
+    height:30px;
+    background:url('../img/topic-ico.png')no-repeat;
+    display: inline-block;
+    margin:24px 0 5px;
+}
+.tc-main .tc-right .self-tc .self-btn:first-of-type>a>span{
+    background-position:-65px 0px;
+}
+.tc-main .tc-right .self-tc .self-btn:nth-of-type(2)>a>span{
+    background-position:-2px 0px;
+}
+.tc-main .tc-right .self-tc .self-btn:nth-of-type(3)>a>span{
+    background-position:-34px 0px;
+}
+.tc-main .tc-right .self-tc .self-btn>a>p{
+    font-size: 12px;
+}
+/* 猜你喜欢 */
+.tc-main .tc-right .guess {
+    margin-top:20px;
+}
+.tc-main .tc-right .guess h5{
+    color:#999;
+    font-size: 16px;
+    font-weight: 600;
+    line-height:22px;
+    margin-left: 7px;
+    margin-bottom: -15px;
+}
+.tc-main .tc-right .guess .system-course .fc-ul,
+.tc-main .tc-right .guess .system-course{
+    width: 280px;
+    min-width: 280px;
+    margin-top:0px;
+}
+.tc-main .tc-right .guess .system-course .fc-ul>li{
+    float: none;
+    width: 280px;
+    height: 300px;
+    margin-right: 0;
+    margin-bottom:20px;
+} 

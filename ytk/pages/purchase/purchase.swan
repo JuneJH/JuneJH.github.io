@@ -1,0 +1,42 @@
+<view class="main">
+	<view class="top">
+		<view class="msgs">
+			<view class="cname">{{title}}</view>
+			<view class="times">有效期至：{{endtime}}</view>
+		</view>
+	</view>
+
+	<view class="cdata" s-if="classShow">
+		<block s-for="ele,index in (flagClass == 1?(selectIt?listC:list):list)">
+
+			<view class="{{ids == index?'chosetimes':'chosetime'}}" data-index="{{index}}" bindtap="choose">
+				<view class="month">{{ele.ExpirationDate}}个月</view>
+				<view class="couts" s-if="{{ele.Discount =='10'}}"></view>
+				<view class="couts" s-else>{{ele.Discount}}折</view>
+			</view>
+
+		</block>
+	
+	</view>
+
+	<view class="yct" hidden='{{flag==0}}' s-if="classShow">
+
+		<view class="checktitle" s-if="!flagB">同时购买{{flagtitle}}</view>
+		<view class="checktitle" s-if="flagB">共{{notBuyCount}}个课时还未购买
+			<text s-if="buyAllDiscount!=10">，打包购买再{{buyAllDiscount}}折</text></view>
+		<view class=" {{selectIt?'select':'noselect'}}" bindtap="together"></view>
+	</view>
+
+	<view class="zf">
+		<view class="zleft">支付金额：</view>
+		<view class="zright">
+			<view class="zh">￥{{price}}</view>
+			<view class="zq">￥{{costPrice}}</view>
+		</view>
+	</view>
+
+	<view class="pay" bindtap="purchaseA">
+		<button>确认购买</button>
+	</view>
+
+</view>

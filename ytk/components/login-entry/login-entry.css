@@ -1,0 +1,47 @@
+.modal {
+    position: fixed;
+    z-index: 9999999999999999;
+}
+.mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 99999999999999;
+}
+.content {
+    width: 542rpx;
+    height: 592rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -296rpx;
+    margin-left: -271rpx;
+    background-image: url("/images/授权弹窗.png");
+    background-size: 100% 100%;
+    z-index: 999999999999999999999999;
+}
+.btn {
+    width: 317rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    position: absolute;
+    bottom: 64rpx;
+    left: 113rpx;
+    background-image: url("/images/授权按钮.png");
+    background-size: 100% 100%;
+    color: #fff;
+}
+.text {
+    position: absolute;
+    text-align: center;
+    top: 331rpx;
+    left: 135rpx;
+    width: 272rpx;
+    font-size: 34rpx;
+    font-weight: 500;
+}

@@ -1,0 +1,258 @@
+/* nav选中情况 */
+header .nav .nav-menu li:not(first-child).sub-select a{
+    color: rgb(249, 99, 98)
+}
+.point{
+    width: 20px;
+    height: 100px;
+    position: fixed;
+    right:20px;
+    top:60%;
+    z-index: 9999;
+}
+.point a{
+    display: block;
+    width: 7px;
+    height: 10px;
+    border-radius: 50%;
+    border:1px solid rgb(248, 92, 91);
+    margin:10px 5px;
+}
+.point a.select{
+    height:24px;
+    background-color:rgb(248, 92, 91);
+    border-radius: 10px;
+}
+
+/* 所有节选的外部，设置背景 */
+.main-subject,
+.main-method,
+.main-honor,
+.main-bkw{
+    width: 100%;
+    /* 背景图片 */
+}
+.main-subject{
+    overflow: hidden;
+    background:url('../img/index-bg.png') no-repeat;
+}
+/* 所有节选标题 */
+.main-subject .subject-title,
+.main-method .subject-title,
+.main-honor .subject-title,
+.main-bkw .subject-title{
+    width:35%;
+    min-width: 685px;
+    margin:100px auto;
+    text-align: center;
+}
+.subject-title h2{
+    font-size: 36px;
+    color:#222;
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+.subject-title h4{
+    font-size: 14px;
+    color:#999;
+    font-weight: normal;
+    margin-bottom: 110px;
+}
+/* 所有内部外框 */
+.main-subject .subject-type,
+.main-method .method-type,
+.main-honor .honor-show{
+    width: 65%;
+    margin:0 auto;
+    min-width: 1200px;
+}
+.main-subject .subject-type .type-ul li{
+    width: 240px;
+    height: 190px;
+    float: left;
+    text-align: center;
+    margin-bottom: 100px;
+    transition: all .3s;
+}
+.main-subject .subject-type .type-ul li .xf-img{
+    background:url('../img/xf-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .xf-img{
+    background:url('../img/xf-red.png')
+}
+.main-subject .subject-type .type-ul li .jzs1-img{
+    background:url('../img/jzs1-black.png')no-repeat;
+}
+.main-subject .subject-type .type-ul li:hover .jzs1-img{
+   
+    background:url('../img/jzs1-red.png')no-repeat;
+}
+.main-subject .subject-type .type-ul li .jzs2-img{
+    background:url('../img/jzs2-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .jzs2-img{
+    background:url('../img/jzs2-red.png')
+}
+.main-subject .subject-type .type-ul li .kjs-img{
+    background:url('../img/kjs-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .kjs-img{
+    background:url('../img/kjs-red.png')
+}
+.main-subject .subject-type .type-ul li .ckjzc-img{
+    background:url('../img/ckjzc-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .ckjzc-img{
+    background:url('../img/ckjzc-red.png')
+}
+.main-subject .subject-type .type-ul li .zkjzc-img{
+    background:url('../img/zkjzc-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .zkjzc-img{
+    background:url('../img/zkjzc-red.png')
+}
+.main-subject .subject-type .type-ul li .zj-img{
+    background:url('../img/zj-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .zj-img{
+    background:url('../img/zj-red.png')
+}
+.main-subject .subject-type .type-ul li .jj-img{
+    background:url('../img/jj-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .jj-img{
+    background:url('../img/jj-red.png')
+}
+.main-subject .subject-type .type-ul li .qh-img{
+    background:url('../img/qh-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .qh-img{
+    background:url('../img/qh-red.png')
+}
+.main-subject .subject-type .type-ul li .yh-img{
+    background:url('../img/yh-black.png')
+}
+.main-subject .subject-type .type-ul li:hover .yh-img{
+    background:url('../img/yh-red.png')
+}
+.main-subject#subject .subject-type .type-ul li .course-img{
+    display: inline-block;
+    margin: 34px 0 30px;
+    height:74px;
+    width:65px;
+    height: 74px;
+    background-repeat: no-repeat;
+}
+.main-subject .subject-type .type-ul li a .subject-name{
+    font-size: 26px;
+    width: 100%;
+    height: auto;
+    color:#999;
+    font-weight:400;
+}
+.main-subject .subject-type .type-ul li:hover .xf-img{
+    background:url('../img/xf-red.png')
+}
+.main-subject .subject-type .type-ul li:hover .subject-name{
+    color:#F85C5B;
+}
+.main-subject .subject-type .type-ul li:hover {
+    box-shadow: 2px 1px 5px 2px #ddd;
+    border-radius: 10px;
+}
+.main-method .method-type .method-play{
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+.main-method .method-type .method-play .play-ul{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.main-method .method-type .method-play .play-ul li{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    
+}
+.main-method .method-type .method-play .play-ul li.select{
+    display: block;
+}
+.main-method .method-type .method-play .play-ul li .method-ico{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.main-method .method-type .method-play .play-ul li .method-ico img{
+    width: 100%;
+    height: 100%;
+}
+
+.main-method .method-type .method-play .play-ul li .method-content{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+.main-method .method-type .method-play .play-ul li .method-content .content{
+    position: absolute;
+    top:10px;
+    left:100px;
+}
+.main-method .method-type .method-play .play-ul li .method-content .content p{
+    color:#999;
+    margin-top:25px;
+    font-weight: 200;
+    line-height: 1.5em;
+}
+.main-method .method-type .method-play {
+    position: relative;
+
+}
+.main-method .method-type .method-play .slide-index{
+    width:260px;
+    height: 30px;
+    position: absolute;
+    bottom: 70px;
+    left: 100px;
+    z-index: 999;
+}
+.main-method .method-type .method-play  span{
+    display: inline-block;
+    width: 52px;
+    height: 4px;
+    border-radius: 50px;
+    background-color:#ddd;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.main-method .method-type .method-play  span.select{
+    background-color:#f00;
+}
+
+.main-method .method-type .method-img{
+    width: 50%;
+    height: 300px;
+    position: absolute;
+    right: 0px;
+}
+.main-method .method-type .method-img img{
+    width: 100%;
+    height: 100%;
+
+}
+.main-honor{
+    height: 650px;
+    background:url(../img/bkw-honor.jpg) no-repeat center top;
+}
+.main-bkw .bkw-show{
+    width: 65%;
+    min-width: 1200px;
+    height: 445px;
+    background:url(../img/bkw-show.jpg) no-repeat center top;
+    margin:0 auto 140px;
+}
