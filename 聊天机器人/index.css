@@ -1,0 +1,123 @@
+*{
+    padding:0;
+    margin:0;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+html,body{
+    height: 100%;
+}
+.wapper{
+    width:500px;
+    height:100%;
+    margin:0 auto;
+}
+.wapper p{
+    text-align:center;
+    width: 100%;
+    height: 40px;
+    background-color:#666;
+    color:#fff;
+    line-height:40px;
+}
+.wapper .contents-box{
+    height: calc(100% - 90px);
+    overflow-y: scroll;
+    background-color:#eee;
+}
+.mine{
+    float:right;
+    margin: 10px;
+    width: 500px;
+}
+.robot{
+    float: left;
+    width: 500px;
+    margin: 10px;
+    width: 500px;
+
+}
+.headeImg{
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background-color:orange;
+    display:inline-block;
+    vertical-align: middle;
+}
+.mine .headeImg{
+    background-image: url();
+    float: right;
+    vertical-align: middle;
+
+}
+.robot .headeImg {
+    background-image: url()
+    
+}
+.text{
+    display:inline-block;
+    vertical-align: middle;
+    max-width: 250px;
+    padding:10px;
+    border-radius:10px;
+    position: relative;
+    word-wrap:break-word;
+    word-break:break-all;
+    min-width: 10px;
+    min-height: 20px;
+   
+}
+.mine .text {
+    background-color:greenyellow;
+    margin-right: 10px;
+    float: right;
+}
+.mine .text::after{
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border:10px solid transparent;
+    border-left-color: greenyellow;
+    position: absolute;
+    top:7px;
+    right:-20px;
+}
+.robot .text{
+    background-color:#ddd;
+    margin-left: 5px;
+}
+.robot .text::before{
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border:10px solid transparent;
+    border-right-color: #ddd;
+    position: absolute;
+    top:7px;
+    left:-20px;
+}
+.msg{
+    width: 100%;
+    height: 50px;
+    background-color: #999;
+    line-height: 50px;
+}
+.msg .inp{
+    width: 400px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    padding-left:5px;
+}
+.msg .btn {
+    width: 50px;
+    height: 30px;
+    border:none;
+    border-radius: 5px;
+    color:#fff;
+}

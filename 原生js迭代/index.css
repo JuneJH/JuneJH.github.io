@@ -1,0 +1,169 @@
+*{
+    padding:0;
+    margin:0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.wrap{
+    width: 100%;
+    height:100%;
+}
+.wrap .nav{
+    width: 100%;
+    height: 60px;
+    background-color: #ddd;
+    line-height: 60px;
+  
+}
+.wrap .nav img{
+    width: 40px;
+    height: 40px;
+    padding-left:20px;
+    vertical-align: middle;
+}
+.content {
+    width: 100%;
+    height: calc(100% - 60px);
+    position: relative;
+}
+.content .left-content {
+    width: 10%;
+    height: 100%;
+    min-width: 100px;
+    background-color: #ddd;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+.content .left-content dl dt{
+    padding:15px 0 10px 15px;
+
+
+}
+.content .left-content dl dd{
+    padding:10px 0 10px 30px;
+    cursor: pointer;
+
+
+}
+.content .left-content dl dd:hover{
+    background-color: #eee;
+}
+.content .left-content .active{
+    background-color: #fff;
+    color:#000;
+}
+.content .right-content{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:10%;
+}
+.content .right-content .addpage{
+    display: none;
+}
+.student-list{
+    display: none;
+}
+.content .right-content .addpage form{
+    width: 300px;
+    margin: 100px auto;
+    
+}
+.content .right-content .addpage label{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+
+}
+.content .right-content .addpage .submit {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.content .right-content .addpage form div{
+    margin-top: 10px; 
+}
+.content .right-content .addpage .submit input{
+    padding: 5px 25px;
+    outline: none;
+    border: none;
+
+}
+.content .right-content .student-list table{
+    width: 100%;
+    height: 100%;
+}
+.content .right-content .student-list table tr{
+    margin-top: 10px; 
+}
+.content .right-content .student-list table tr td{
+    text-align: center;
+    min-width: 100px;
+
+}
+.content .right-content .student-list table tr td .btn{
+    border: none;
+    padding:5px 10px;
+    cursor: pointer;
+    color: #fff;
+
+}
+.content .right-content .student-list table tr td .add{
+    background-color: rgb(255, 208, 0);
+    margin-left: 5px;
+}
+.content .right-content .student-list table tr td .del{
+    background-color: #f40;
+}
+.content .right-content .student-list table tr{
+    padding:10px;
+       
+}
+.mask{
+    position: fixed;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.226);
+    display: none;
+}
+.editForm{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 350px;
+    height: 400px;
+    margin-left: -175px;
+    margin-top:-200px;
+    background-color:#fff;
+    padding: 10px;
+}
+.editForm form{
+   width: 300px;
+   margin: 20px auto;   
+}
+.editForm form label{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    
+}
+.editForm form input {
+    margin-top: 10px;
+}
+.editForm form .submit input{
+    border: none;
+    padding:5px 15px;
+    cursor: pointer;
+}
+.editForm form .submit{
+    margin-left: 80px;
+}
+.maskActive{
+    display: block;
+}

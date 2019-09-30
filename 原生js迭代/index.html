@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="nav">
+            <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2884107401,3797902000&fm=27&gp=0.jpg"
+                alt="">
+            <span>渡一教育</span>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <dl>
+                    <dt>学生管理</dt>
+                    <dd class="active" data-class="student-list">学生信息</dd>
+                    <dd data-class="addpage">新增学生</dd>
+                </dl>
+            </div>
+            <div class="right-content">
+                <div class="addpage rcontent">
+                    <form action="#" class="newAddForm">
+                        <div>
+                            <label for="name">姓名:</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div>
+                            <label for="sex">性别:</label>
+                            <input type="radio" name="sex" value="0"> 男
+                            <input type="radio" name="sex" value="1"> 女
+                        </div>
+                        <div>
+                            <label for="sNo">学号:</label>
+                            <input type="text" name="sNo">
+                        </div>
+                        <div>
+                            <label for="email">邮箱:</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div>
+                            <label for="birth">出生年:</label>
+                            <input type="text" name="birth">
+                        </div>
+                        <div>
+                            <label for="phone">手机号:</label>
+                            <input type="text" name="phone">
+                        </div>
+                        <div>
+                            <label for="address">住址:</label>
+                            <input type="text" name="address">
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="提交" class="newAddBtn">
+                            <input type="reset" value="重置">
+                        </div>
+                    </form>
+                </div>
+                <div class="student-list rcontent">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>学号</th>
+                                <th>邮箱</th>
+                                <th>住址</th>
+                                <th>手机号</th>
+                                <th>出生年</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="studentInfo">
+                            <tr>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>学号</td>
+                                <td>邮箱</td>
+                                <td>住址</td>
+                                <td>手机号</td>
+                                <td>出生年</td>
+                                <td>
+                                    <button class="btn add">编辑</button>
+                                    <button class="btn del">删除</button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mask">
+                        <div class="editForm">
+                            <h2>编辑信息</h2>
+                            <form action="#" class="edit-form">
+                                <div>
+                                    <label for="name">姓名:</label>
+                                    <input type="text" name="name" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="sex">性别:</label>
+                                    <input type="radio" name="sex" value="0"> 男
+                                    <input type="radio" name="sex" value="1"> 女
+                                </div>
+                                <div>
+                                    <label for="sNo">学号:</label>
+                                    <input type="text" name="sNo" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="email">邮箱:</label>
+                                    <input type="text" name="email" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="birth">出生年:</label>
+                                    <input type="text" name="birth" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="phone">手机号:</label>
+                                    <input type="text" name="phone" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="address">住址:</label>
+                                    <input type="text" name="address" autocomplete="off">
+                                </div>
+                                <div class="submit">
+                                    <input type="submit" class="submitBtn" value="提交">
+                                    <input type="reset" value="重置">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

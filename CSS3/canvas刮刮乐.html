@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .gift {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        top: calc(50% - 100px);
+        left: calc(50% - 150px);
+        border: 1px solid;
+        text-align: center;
+    }
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+    }
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        z-index: 1;
+    }
+</style>
+
+<body>
+
+    <div class="gift">
+        <canvas id="canvas" width="300px" height="200px"></canvas>
+        <span>谢谢参与</span>
+    </div>
+    <script>
+        (function () {
+            function init() {
+                randGift();
+                clearC();
+            }
+            function randGift() {
+                var ospan = document.getElementsByTagName('span')[0];
+                var arry = ['一等奖', '二等奖', '三等奖', '谢谢参与'];
+                var rand = Math.floor(Math.random() * 4);
+                ospan.innerText = arry[rand];
+            }
+            function clearC() {
+                var clearM = 0;
+                var gift = document.getElementsByClassName('gift')[0];
+                var canvas = document.getElementById('canvas');
+                var initY = gift.offsetTop,
+                    initX = gift.offsetLeft;
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = "#eee";
+                ctx.fillRect(0, 0, 300, 200);
+                canvas.onmousemove = function (e) {
+                    ctx.clearRect(e.clientX - initX, e.clientY - initY, 30, 30);
+                    clearM += 900;
+                    if(clearM >= 30000){
+                        // showGift();
+                    }
+
+                }
+
+                
+            }
+            function showGift() {
+                
+                var ospan = document.getElementsByTagName('span')[0];
+
+                alert(ospan.innerText);
+            };
+            init();
+        })()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

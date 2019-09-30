@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-size: 12px;
+    color:#999;
+}
+body{
+    background-color: #f0f3ef
+}
+a{
+    color:#999
+}
+.clearF::after{
+    content:'';
+    display:block;
+    clear: both;
+}
+.heade{
+    width: 100%;
+    height: 150px;
+}
+.heade .nav {
+    width: 100%;
+    height: 30px;
+    background-color: #e3e4e5;
+}
+.heade .nav .shortcut {
+    width: 1190px;
+    height: 30px;
+    margin: 0 auto;
+}
+.heade .nav .shortcut .rightNav {
+    float:right;
+
+}
+.heade .nav .shortcut .rightNav li{
+    float:left;
+    line-height: 30px;
+}
+.heade .nav .shortcut .rightNav li:nth-child(2n){
+    width: 1px;
+    height: 10px;
+    overflow: hidden;
+    margin: 11px 5px 0;
+    background-color: #ccc;
+}
+/* .heade .nav .shortcut .rightNav li:nth-child(2n+1){
+
+} */
+.heade .nav .shortcut .rightNav li:nth-child(2n+1) a{
+    border: 1px solid transparent;
+    padding: 0 5px;
+    height: 100%;
+}
+.search{
+    width: 1190px;
+    height: 140px;
+    margin:0 auto;
+    position:relative;
+}
+.log{
+    width:190px;
+    height: 170px;
+    /* background-image: url(//img1.360buyimg.com/da/jfs/t22447/131/1412677299/155230/b907d44a/5b5edd08N8ce69859.gif?v=0.34196024253839186); */
+    /* background-size: 100% 100%; */
+    border:1px solid #eee;
+    background-color: orange;
+    position:absolute;
+    left: 0;
+    top:-31px;
+    z-index: 101;
+}
+.searchForm{
+    font-size: 0;
+    position: absolute;
+    left:320px;
+    top:25px;
+    width: 550px;
+    height: 35px;
+    box-sizing: border-box;
+
+}
+.searchForm .search-input{
+    padding: 4px 44px 4px 4px;
+    border: 1px solid #eee;
+    width: 450px;
+    height:25px;
+    outline: none;
+}
+.searchForm .search-button {
+    width: 50px;
+    height:35px;
+    border:none;
+    background-color:#f40;
+    color:#fff;    
+    outline: none;
+}
+#tip{
+    width:500px;
+    background-color: #fff;
+    border:1px solid #eee;
+    text-align:right;
+    position: absolute;
+    z-index: 100;
+    display:none;
+    padding:5px;
+
+}
+
+#tip>ul>li{
+    height:20px;
+}
+.serch-item{
+    float: left;
+}
+.hot-ul>li{
+    float:left;
+    margin: 5px;
+}
+.hot-ul>li:first-child a{
+    color: red
+}
+.shop-car{
+    position:absolute;
+    right: 99px;
+    top:25px;
+    width: 188px;
+    height:33px;
+    background-color:#fff;
+    line-height:33px;
+    text-align:center;
+}
+.shop-car>a{
+    color:red;
+}
+.shop-car>span{
+    display:inline-block;
+    width:12px;
+    height: 12px;
+    position:absolute;
+    top:6px;
+    margin-left: 5px;
+    background-color:red;
+    border-radius: 7px;
+    line-height:12px;   
+    color:#fff;
+}
+.navitem{
+    width:790px;
+    position:absolute;
+    left: 210px;
+    bottom: 0;
+}
+.navitem>ul>li{
+    float: left;
+    margin: 5px;
+
+}
+.navitem>ul>li>a{
+    font-size: 14px;
+    color:#000;
+}
+.navitem .division{
+    float: left;
+    width:1px;
+    height: 10px;
+    margin-top:10px;
+    background-color:#eee;
+}
+.warp-content{
+    width: 100%;
+    height: 480px;
+}
+.content{
+    width: 1190px;
+    height: 480px;
+    margin: 30px auto;
+    position:relative;
+
+}
+.fs-1{
+    width: 190px;
+    background-color:#fff;
+    margin-right: 10px;
+}
+.fs-1>ul{
+    margin-top:10px;
+}
+.fs-1>ul>li{
+    padding: 5px 0 0 10px;
+
+}
+.fs-1>ul>li>a{
+    color:#000;
+    font-size: 14px;
+}
+.fs-1>ul>li>a:hover{
+    color:red;
+}
+.fs-2{
+    width: 590px;
+    margin-right: 10px;
+
+
+}
+.fs-3{
+    width: 190px;
+    margin-right: 10px;
+
+
+}
+.fs-4{
+    width: 190px;
+  
+}
+.fs{
+    float: left;
+    height: 100%;
+}
+.menu-list{
+    width:1000px;
+    height: 480px;
+    position:absolute;
+    background-color:#fff;
+    left:191px;
+    top:0;
+    display: none;
+
+}
+.menu-list>ul>li{
+    float: left;
+    margin-top: 10px;
+    /* overflow: hidden; */
+
+}
+.menu-list>ul>li>a{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px; 
+    padding: 0 10px;
+    background-color:#000;
+    color:#fff;
+  
+    margin: 10px;
+}
+.item-detail{
+    position: relative;
+    padding-left:80px;
+    color:000;
+
+}
+.item-detail>dt{
+    position:absolute;
+    left: 40px;
+    top:0;
+    width: 70px;
+    font-weight:700;
+    color:#000;
+
+}
+.item-detail>dd{
+    max-width: 700px;
+    margin-left: 40px;
+    overflow:hidden;
+}
+.item-detail>dd>a{
+    height: 16px;
+    line-height:16px;
+    color:#000;
+    padding: 0 10px;
+    border-left: 1px solid #eee;
+    float: left;
+    white-space: nowrap;
+}
+.craoussel{
+    padding-top:10px;
+    width: 100%;
+    height: 470px;
+}
+.rec-item {
+    width:190px;
+    height: 150px;
+    margin-top:10px;
+}
+.rec-item img{
+    width:100%;
+    height:100%;
+}
+.jd-user{
+    height: 150px;
+    background: #fff;
+
+}
+.fs-4 .jd-userimg{
+    text-align:centet;
+    position: relative;
+    margin-top: 10px;
+    height: 60px;
+}
+.fs-4 .jd-userimg .headimg{
+width:55px;
+height: 55px;
+overflow: hidden;
+border-radius: 50%;
+text-align:centet;
+position: absolute;
+top:-10px;
+left:50%;
+margin-left: -25px;
+border:5px solid #eee;
+
+}
+.headimg>img{
+    width: 100%;
+    height:100%;
+}
+.jd-usertext{
+    text-align:center;
+}
+.jd-usertext>a{
+    margin-top:10px;
+}
+.jd-usertext .user-btn {
+    margin-top: 10px;
+}
+.jd-usertext .user-btn>span{
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    color: #e43f3b;
+    border-radius: 13px;
+    cursor:pointer;
+}
+.jd-usertext .user-btn .vip{
+    background: #363634;
+    color: #e5d790;
+}
+.jd-usertext .user-btn>span:hover{
+    background-color:red;
+    color:#fff;
+}
+.jd-news{
+    overflow: hidden;
+    height: 130px;
+    background: #fff;
+}
+.jd-news .news-hd{
+    padding: 8px 0 0;
+    position: relative;
+    line-height: 13px;
+    font-size: 0;
+}
+.jd-news .news-hd>h5{
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 15px;
+    color: #1e1e1e;
+}
+.jd-news .news-hd>a{
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 12px;
+    color: #999;
+}
+.news-list{
+    position: relative;
+    padding-top: 8px;
+    margin: 0 15px;
+    height: 88px;
+}
+.news-list>li{
+    line-height: 21px;
+    max-width: 160px;
+    _width: 160px;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999;
+}
+.news-list>li>a{
+    color: #666;
+    text-decoration: none;
+}
+.news-list>li>a>span{
+    background-color: #90b0c6;
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    height: 16px;
+    width: 35px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: 0;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #e47f7f;
+    margin-right: 6px;
+}
+.jd-service{
+    overflow: hidden;
+    position: relative;
+    height: 190px;
+    transition: all .2s ease;
+}
+.jd-service .service-entry{
+    overflow: hidden;
+    padding: 18px 11px 11px;
+    background: #fff;
+}
+.jd-service .service-entry .service-list{
+    height: 165px;
+}
+.jd-service .service-entry .service-list .service-itme{
+    position: relative;
+    float: left;
+    width: 42px;
+    height: 55px;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+.jd-service .service-entry .service-list>a{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-top: 6px;
+    transition: all .5s linear;
+}
+.jd-service .service-entry .service-list .service-itme a>span:hover{
+     color:red;
+}
+.jd-service .service-entry .service-list .service-itme a>i{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url('img/servic-bg.png');
+    background-repeat: no-repeat;
+    background-position: -8px 0px;
+    margin-left: 6px;
+}
+.jd-service .service-entry .service-list .service-itme a .jipiao{
+    background-position: -62px 0px;
+}
+.jd-service .service-entry .service-list .service-itme a .jiudian{
+    background-position: -114px 0px;
+}
+.jd-service .service-entry .service-list .service-itme a .youxi{
+    background-position: -167px 0px;
+}
+.servic-pop{
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    background-color: #fff;
+    transition: all .2s ease;
+    top: 200px;
+}
+.service-s .servic-pop{
+    top:20px;
+}
+.service-s .head-item{
+    margin-top:-50px;
+}
+
+.close-btn{
+    float:right;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
