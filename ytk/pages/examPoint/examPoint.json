@@ -1,8 +1,0 @@
-{
-    "navigationBarBackgroundColor": "#FECC34",
-    "navigationBarTitleText": "考点练习",
-    "navigationBarTextStyle": "#222222",
-    "usingComponents": {
-        "login-entry": "/components/login-entry/login-entry"
-    }
-}

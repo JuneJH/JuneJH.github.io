@@ -1,7 +1,0 @@
-<view class="warpper">
-	<text class="title">输入验证码</text>
-	<view>验证码已发送至<text>{{tel}}</text></view>
-	<input class="tel" maxlength="6" bindinput="login" />
-	<text class="tips" s-if="{{!obtain}}">{{time}}秒后重新获取</text>
-	<text class="tips" bindtap="sendotp" s-else>重新获取验证码</text>
-</view>

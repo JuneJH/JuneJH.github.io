@@ -1,5 +1,0 @@
-<view class="content" bindtap='refresh'>
-    <image src="http://img.zcool.cn/community/012e0159c8de10a8012053f88c0e28.png"></image>
-    <view>网络异常</view>
-    <view>点击刷新</view>
-</view>

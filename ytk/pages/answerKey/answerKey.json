@@ -1,8 +1,0 @@
-{
-    "navigationBarBackgroundColor": "#FECC34",
-    "navigationBarTitleText": "答案解析",
-    "navigationBarTextStyle": "#222222",
-      "usingComponents": {
-        "toast": "/components/toast/toast"
-    }
-}

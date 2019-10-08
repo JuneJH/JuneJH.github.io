@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "高频题库",
-   "usingComponents": {
-        "login-entry": "/components/login-entry/login-entry"
-    }
-}

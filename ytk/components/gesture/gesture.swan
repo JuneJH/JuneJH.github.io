@@ -1,7 +1,0 @@
-<view class="warpper" s-if="{{modal}}">
-    <view class="mask"></view>
-    <view class="content">
-        <image class="gesture" src="/images/左右滑动可切换题目.png" ></image>
-        <image class="btn" src="/images/朕知道了！.png" bindtap="handtap"></image>
-    </view>
-</view>

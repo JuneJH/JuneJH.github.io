@@ -1,6 +1,0 @@
-<view class="warpper">
-    <view class="title2">请填写你要找回密码的手机号</view>
-    <input class="tel " maxlength="11" placeholder="请输入手机号" bindinput='tel'/>
-    <text class="tips2" s-if="existUser">账号不存在，请重新输入</text>
-    <button class="btn {{length == 11 ? 'ready': ''}}" disabled="{{length == 11 ? false: true}}" bindtap="btn">下一步</button>
-</view>
