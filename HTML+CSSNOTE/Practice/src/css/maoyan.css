@@ -1,0 +1,139 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+a{
+    text-decoration: none;
+}
+.clear-fix::after{
+    content:'';
+    display: block;
+    clear:both;
+
+}
+.main{
+    line-height: 1.5;
+}
+.main .nav{
+  width: 100%; 
+  height: 60px;
+  text-align: center;
+  background-color:#474645;
+}
+.main .nav a{
+    line-height: 60px;
+    color:#999;
+    font-size: 16px;
+    margin:0 30px;
+    position: relative;
+}
+.main .nav a:hover{
+    color:#fff;
+}
+.main .nav a.select{
+    color:#f00;
+}
+.main .nav a.select::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left:50%;
+    margin-left:-10px;
+    bottom: 0px;
+    margin-bottom: -20px;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+}
+.main .movie{
+    width: 1120px;
+    margin:40px auto;
+}
+.main .movie .choice-area{
+    width: 100%;
+    border:1px solid #e5e5e5;
+    line-height: 30px;
+}
+.main .movie .choice-area .movie-item{
+    margin:30px 20px;
+    padding-bottom:20px;
+    border-bottom: 1px solid #ddd;
+}
+.main .movie .choice-area .movie-item:last-child{
+    border-bottom: none;
+}
+.main .movie .choice-area .movie-item .type{
+    font-size:14px;
+    color:#999;
+    padding-left:10px;
+    float: left;
+}
+.main .movie .choice-area .movie-item ul{
+    float: left;
+    width:1000px;
+    margin-left: 20px;
+}
+.main .movie .choice-area .movie-item ul li{
+    float: left;
+    list-style: none;
+}
+.main .movie .choice-area .movie-item ul li a{
+    color:inherit;
+    padding:5px 10px;
+    border-radius:15px;
+}
+.main .movie .choice-area .movie-item ul li:hover{
+    color:red;
+}
+.main .movie .choice-area .movie-item ul li.select{
+    background-color:#f00;
+    color:#fff;
+    border-radius: 15px;
+}
+.main .movie .choice-movie{
+    margin:40px 0 0 0;
+}
+.main .movie .choice-movie .movie-option {
+    width: 160px;
+    height: 285px;
+    float: left;
+    margin-right: 32px;
+    text-align: center;
+}
+.main .movie .choice-movie .movie-option:nth-of-type(6n){
+    margin-right:0px;
+}
+.main .movie .choice-movie .movie-option .poster{
+    width: 160px;
+    height: 220px;
+}
+.main .movie .choice-movie .movie-option .poster img{
+    width:100%;
+    height:100%;
+}
+.main .movie .choice-movie .movie-option .movie-name{
+     padding: 0px 3px;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     overflow: hidden;
+}
+.main .movie .choice-movie .movie-option .grade{
+    color:#ffb400;
+    font-style: italic;
+}
+.main .movie .choice-movie .movie-option .grade:first-letter{
+    font-size: 18px;
+ 
+}
+.main .page{
+   text-align: center;
+   margin-bottom: 100px;
+}
+.main .page span{
+    padding:5px 10px;
+    border:1px solid #eee;
+    cursor: pointer;
+}
+.main .page span.select{
+    background-color:#f00;
+    color:#fff;
+}

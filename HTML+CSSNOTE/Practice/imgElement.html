@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>img Event</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        /* 使用样式表-> 层叠规则 -> 继承 -> 使用默认样式 */
+        a{
+            text-decoration: none;
+            /* color:inherit; */
+        }
+      
+       img{
+           width:100px;
+           height: 100px;
+       }
+        .test ul li {
+            color:#008c8c;
+        }
+        .test {
+            /* color:#ff0; */
+            font-size: 50px;
+        }
+     
+     h2{
+         font-size: inherit;
+     }
+     .box{
+         width: 200px;
+       
+         border:1px solid;
+         line-height:200px;
+         padding: 0 20px;
+         box-sizing:border-box;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+     }
+
+       .parent{
+          width: 600px;
+          height: 400px;
+          background-color:#008c8c;
+          margin-left: 100px;
+          
+       }
+       .child{
+        width: 100px;
+        height: 100px;
+        background-color:red;
+      
+       }
+       img{
+           width:400px;
+           height: 900px;
+           border:2px solid #ccc;
+       }
+
+    
+    
+    </style>
+</head>
+<body>
+    <figure>
+        <figcaption>
+            <h2>hbb</h2>
+        </figcaption>
+        <img usemap="#hbbMap" src="./src/hbb.jpg" alt="">
+        <map name="hbbMap">
+            <area shape="circle" coords="274,160,60 " href="https://baike.baidu.com/item/%E7%9C%BC%E7%9D%9B/362?fr=aladdin"  target="_blank">
+            <area shape="rect" coords="132,175,578,463" href="https://baike.baidu.com/item/%E5%98%B4%E5%B7%B4/10431464?fr=aladdin" target="_blank" >
+            <area shape="poly" coords="10,10,10,30,40,50" href="https://baike.baidu.com/item/%E5%98%B4%E5%B7%B4/10431464?fr=aladdin" target="_blank">
+        </map>
+    </figure>
+
+    <div class="test">
+        <ul>
+            <li><a href=""> Lorem, ipsum.</a></li>
+            <li>Incidunt, quidem!</li>
+            <li>Harum, id.</li>
+        </ul>
+        <a href="">kllklklk</a>
+        <h2>test color</h2>
+    </div>
+
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae ducimus magnam ipsam cum ipsum ipsa placeat laboriosam, aut dolores dicta! Distinctio dolor dolorem labore omnis ullam suscipit libero cum perspiciatis.
+    </div>
+
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <img src="./../../MyHead.png" alt="">
+</body>
+
+</html>

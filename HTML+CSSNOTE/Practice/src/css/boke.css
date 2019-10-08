@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:#948b8b;
+    line-height: 2em;
+    min-width: 1000px;
+}
+article{
+    background-color:#fff;
+    margin:20px auto;
+    padding:20px 0;
+    width:90%;
+
+}
+article header{
+    background-color:#008c8c;
+    text-align: center;
+    margin: 0 -34px;
+    margin-bottom: 30px;
+    border:5px solid #056666;
+}
+article header h1{
+    font-size: 42px;
+    line-height: 2em;
+    color:#fff;
+}
+article header p{
+    margin-bottom: 26px;
+}
+article header p a{
+    color:inherit;
+}
+article header p a:hover{
+    color:#fff;
+}
+article section{
+    width: 90%;
+    margin: 0 auto;
+
+}
+article section p{
+    margin:1em 0;
+}
+article h2{
+    line-height: 2em;
+    font-size: 32px;
+    border-top:1px dotted;
+    border-bottom:1px dotted;
+}
