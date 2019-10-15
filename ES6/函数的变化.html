@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //  函数的默认参数
+         function fn ({a='init',b='init'} = {}){
+             console.log(a,b)
+         }
+         fn()
+         // 扩展运算符，rest运算符   ...     剩余参数
+         function show(a,b,c,...d){
+             console.log(a,b,c,d)
+         }
+         show(1,2,3,4,5,6,7)
+         let arr=[1,2,3,4,5,6,7,8,9]
+         show(...arr)
+        //  克隆数组
+        let oldarry = [1,2,3,4,5,6];
+        let newArry = [...oldarry];  // 深度克隆  
+        // let newArry = Array.from(oldarry)
+        newArry.push(999)
+        oldarry.push(10000)
+        console.log(oldarry,newArry)
+        // 
+        let [a,b,...c] = [1,2,3,4,5,6]
+        console.log(a,b,c)
+
+        console.log('=========================')
+        //箭头函数  =>
+        // this问题: 定义函数所在的对象，不再是运行时所在的对象
+        // 没有arguments，用...处理
+        // 箭头函数不能当构造函数
+        let fn2 = () => {};
+
+
+        //Es2017   参数允许多个，
+        let fn1 = (a,b,c,) => {
+            console.log(a,b,c)
+        }
+        fn1(111,2,3,)
+
+
+        
+    
+    </script>
+</body>
+</html>

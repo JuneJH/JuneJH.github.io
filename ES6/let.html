@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // var 在外部定义的变量属于全局，属于window let不是
+
+
+
+        //  第一种情况
+        for(var i = 0; i < 10; i ++){
+        //    i = 'abc'
+            //  console.log('i:',i)
+        }
+        console.log(i);
+
+        for(let j = 0; j < 10; j ++){
+            let j = 'abc'
+            console.log('j:',j)
+
+        }
+        // console.log(j)   j is not defined
+        // 
+        // 测试读取上一个AO
+        function foo(){
+            let a = 10;
+            function showA(){
+                console.log('a:',a)
+            }
+            showA();
+        }
+        foo();
+        // 测试块级作用域
+
+        {
+            let b = 10;
+            {
+                console.log('b:',b)
+            }
+        }
+        // cosnole.log(b)   b is not defined
+
+        // 不存在变量提升
+        console.log('======不存在变量提升');
+        function varts(){
+            // console.log(d);  undefined
+            var d = 10;
+        }
+        function letts(){
+            // console.log(e);   Cannot access 'e' before initialization
+            let e = 10;
+        }
+        varts();
+        letts();
+          
+        //暂时性死区
+        console.log('======TDZ========');
+        var tdz = 10;
+        function tdzHandle(){
+            // tdz = 20;                             Cannot access 'tdz' before initialization
+            // console.log('tdz:',tdz);              Cannot access 'tdz' before initialization
+            // typeof tdz;                           Cannot access 'tdz' before initialization
+            // 在没有let之前，typeof运算符是百分之百安全的，永远不会报错。现在这一点不成立了。这样的设计是为了让大家养成良好的编程习惯，变量一定要在声明之后使用，否则就报错。
+            let tdz = 30;
+            console.log('tdz:',tdz)
+        }
+        tdzHandle();
+        
+
+
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 结构赋值
+        let [a, b, c = '暂未'] = ['a', 'b', null]    //结构可以给默认值，但是null特殊，渲染的时候null会出现
+        console.log(a, b, c)
+        let obj = {
+            aa: 'aa',
+            bb: 'bb'
+        }
+
+        let { aa, bb:b2 } = obj;  // b2为自己取得名字，有了之后之前的就不能用
+        console.log(aa,b2)
+
+        let aaa = 5;
+        let bbb = 10;
+        [aaa,bbb] = [bbb,aaa]   // 交换值
+        console.log(aaa,bbb)
+
+        // 函数传参
+        function fn({p,o='默认值'}){
+            console.log(p,o)
+        }
+        fn({p:'1111',o:undefined})
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
