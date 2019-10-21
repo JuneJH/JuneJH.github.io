@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // es5中循环
+          // for
+          // while
+          // .forEach()
+          let name = '自定义名字'
+          let obj = {name}
+          let arr = [1,2,3,4,5,6,7,8,9]
+          arr.forEach(function(val,index,oldArr){
+                console.log('forEach()用法',val,index,oldArr,this)
+          },obj)
+         // .map()
+         // .filter()  返回值为true留
+         // .some()
+         // .every()
+         //=======================
+         // .reduce()   从左向右
+         // .reduceRigth()    从右向左
+         console.log('======reduce()=======')
+         arr.reduce(function (prve,curr,index,oldarr){
+             console.log('reduce()用法',prve,curr,index,oldarr)
+             return curr   // prve 为返回值，如不返回即为undefined  第一次读prve为数组第一个值，curr为第二值
+         })
+
+        //  ES6
+          // for of  数组 arr本身为value  其次arr.keys()为数组下标   arr.entries()为内容加key  可用解构赋值
+          for(let [key,val] of arr.entries()){
+              console.log(key,val)
+          }
+        
+        // 数组其他方法
+           // Array.from()    把类数组对象转换成新的数组   深度克隆数组
+           let cloneArry = Array.from(arr)
+           cloneArry.push('add content')
+           console.log(cloneArry,arr)
+           let classArry = {
+               0:'a',
+               1:'b',
+               length:2
+           }
+           let newClassArry = Array.from(classArry);
+          //    classArry.push('erro')
+           newClassArry.push('add classArray')
+           console.log(newClassArry)
+
+           // Array.of()      把一组数据转换数组   ...扩展
+
+             let ofArray = Array.of(1,2,3,4,5,6)
+             ofArray.push('add of()')
+             console.log(ofArray)
+          
+          // 数组方法
+          // .find()  找出第一个符合条件的，返回其value
+          let strArry = ['June','July','John']
+            let findReturn =  strArry.find((val,index,oldarr) => {
+                 if(index == 2){
+                     return val   
+                 }
+             })
+             console.log(findReturn)
+             
+          // .findIndex()  找位置  return 返回的值为val
+             let index = strArry.findIndex((val,index,oldarry) => {
+                 if(val == 'John'){
+                     return val
+                 }
+             })
+             console.log(index)
+          // .fill()   替换，不能更改长度 第一参数为值，第二个为开始位置，第三个为结束位置默认值为length
+          let nullArray = new Array(10);
+          nullArray.fill('默认值')
+          console.log(nullArray)
+          // .includes()   是否包含，返回true false
+          console.log(strArry.includes('J'))
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>

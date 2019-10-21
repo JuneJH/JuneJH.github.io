@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象的简洁语法
+        var name = 'July';
+        // let name = 'June';
+        let age = '18';
+        let love = 'JavaScript';
+        let obj = {
+            name,
+            age,
+            love,   // 多写一个逗号不报错
+            say(){
+               console.log(this.name)
+               return age
+            },  //尽量不要用箭头函数，this指向问题
+            sayLove:()=>{
+               console.log(this.name)  // this指向window
+            }
+        }
+        console.log(obj)
+
+        //  对象的方法
+          // Object.is()   用来比较两个值是否相等  肉眼上的
+          console.log(Object.is(NaN,NaN))
+          console.log(NaN == NaN)
+          console.log(Object.is(+0,-0))
+          console.log(+0 == -0)
+
+          // Object.assign()    合并对象   深度克隆     后者覆盖前者
+
+         let newObj = Object.assign({},obj,{name:'Sss'})
+         console.log(newObj)
+
+          // 循环  Object.keys()  Object.entries()  Object.Values();
+           for(let [key,ele] of Object.entries(obj)){
+               console.log(key,ele)
+           }
+
+
+
+
+
+          // 对象扩展运算符  ...    同数组
+
+
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
