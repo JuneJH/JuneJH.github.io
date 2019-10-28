@@ -1,0 +1,15 @@
+.wrap {
+  width: 600px;
+  height: 600px;
+  background-color: #008c8c;
+}
+.wrap .box {
+  width: 400px;
+  height: 400px;
+  background-color: #ff0;
+}
+.wrap .box ul {
+  width: 200px;
+  height: 200px;
+  background-color: #f00;
+}
